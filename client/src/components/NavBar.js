@@ -7,8 +7,8 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
     return (
         <div class="navbar">
-          <div>currently testing in san francisco</div>
-          <p data-item='Foober'>Foober</p>
+          <div>in beta in sf</div>
+          <p data-item='FÜBER'>FÜBER</p>
 
           <section>
             <div>Bringing the chef to you.</div>
