@@ -1,7 +1,7 @@
-import ChefsContainer from './ChefsContainer';
-import Calendar from './Calendar'
-import RecipesContainer from './RecipesContainer'
-import ReviewsContainer from './ReviewsContainer'
+// import ChefsContainer from './ChefsContainer';
+// import Calendar from './Calendar'
+// import RecipesContainer from './RecipesContainer'
+// import ReviewsContainer from './ReviewsContainer'
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
