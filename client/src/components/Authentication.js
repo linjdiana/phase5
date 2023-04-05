@@ -52,12 +52,11 @@ function Authentication({updateUser}) {
 
 
     return (
-      <div className="auth">
         <div className="cont">
-          <div className={isSignup ? ".cont.s--signup" : ".cont.s--signin"}>
+          <div className={isSignup ? "cont.s--signup" : "cont.s--signin"}>
             {isSignup ? (
               <>
-                <h2>Time to feel like home,</h2>
+                <h2>Ready to join us?</h2>
                 <label>
                   <span>Name</span>
                   <input type="text" />
@@ -91,24 +90,17 @@ function Authentication({updateUser}) {
   
           <div className="sub-cont">
             <div className="img">
-              <div className="img__text m--up">
-                <h2>Ready to join us?</h2>
-                <p>Sign up and discover great amount of new opportunities!</p>
+            <div className={`img__text ${isSignup ? "m--up" : "m--up"}`}>
+                <h2>{isSignup ? "Ready to join us?" : "Have an account?"}</h2>
+                <p>{isSignup ? "Sign up and discover great amount of new opportunities!" : "If you already have an account, just sign in. We've missed you!"}</p>
               </div>
-              <div className="img__text m--in">
-                <h2>Have an account?</h2>
-                <p>If you already have an account, just sign in. We've missed you!</p>
-              </div>
-              <div className="img__btn" onClick={handleClick}>
-              <span className={`m--up ${!isSignup ? "" : "active"}`}>
-          hello
-                </span>
-                <span className={`m--in ${isSignup ? "active" : ""}`}>hello</span>
+            <div className="img__btn" onClick={handleClick}>
+                <span className={`m--up ${!isSignup ? "" : "active"}`}>
+          hi there!</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
     );
   }
 
