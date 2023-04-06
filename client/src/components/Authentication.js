@@ -52,7 +52,7 @@ function Authentication({updateUser}) {
         <div className="cont">
           <h2 style={{color:'red'}}> {formik.errors.name}</h2>
         {error&& <h2 style={{color:'red'}}> {error}</h2>}
-          
+        
             {isSignup ? (
               <form className="s--signup" onSubmit={formik.handleSubmit}>
                 <h2>Ready to join us?</h2>
@@ -68,7 +68,7 @@ function Authentication({updateUser}) {
                   <span>Password</span>
                   <input type='password' name='password' value={formik.values.password} onChange={formik.handleChange} />
                 </label>
-                <button type="submit" className="submit" onClick={handleClick}>
+                <button type="submit" className="submit">
               Sign Up
             </button>
               </form>
@@ -83,7 +83,7 @@ function Authentication({updateUser}) {
                   <span>Password</span>
                   <input type='password' name='password' value={formik.values.password} onChange={formik.handleChange} />
                 </label>
-                <button type="submit" className="submit" onClick={handleClick}>
+                <button type="submit" className="submit">
               Log In
             </button>
               </form>
