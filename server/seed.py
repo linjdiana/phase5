@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-
-# Standard library imports
+import hashlib
 from random import randint, choice as rc
 
 # Remote library imports
@@ -8,15 +6,28 @@ from faker import Faker
 
 # Local imports
 from app import app
-from models import db, User, Chef, Review, Recipe
+from models import db, User
 
 if __name__ == '__main__':
     fake = Faker()
 
     with app.app_context():
         users = []
-        user1=User(name='12', email='di@blah.com', _password_hash='$2b$12$htA7zkYMHNiigaNWShm53.2rJiMX0HkjN8/2xYZTrROX2HxVrYF.G')
+        user1=User(name='Roberto', email='CEO@bobsburgers.com', _password_hash=hashlib.sha256(b"hello1").hexdigest())
         users.append(user1)
+        user2=User(name='John', email='john@applebees.com', _password_hash=hashlib.sha256(b"orangessuck").hexdigest())
+        users.append(user2)
+        user3=User(name='diana', email='diana', _password_hash=hashlib.sha256(b"12345").hexdigest())
+        users.append(user3)
+        user4=User(name='GordonRamsay', email='gordon@meditating.com', _password_hash=hashlib.sha256(b"meditatingsux").hexdigest())
+        users.append(user4)
+        user5=User(name='Antonio', email='tony@bourdain.com', _password_hash=hashlib.sha256(b"imstillhere").hexdigest())
+        users.append(user5)
+        user6=User(name='Julia', email='CEO@applebees.com', _password_hash=hashlib.sha256(b"aheadofthejohns").hexdigest())
+        users.append(user6)
+        user7=User(name='dianasbiggestfan', email='chef@michelin.com', _password_hash=hashlib.sha256(b"dianarocks").hexdigest())
+        users.append(user7)
+
         db.session.add_all(users)
         db.session.commit()
 
