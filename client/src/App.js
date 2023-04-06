@@ -11,26 +11,26 @@ import RecipesContainer from './components/RecipesContainer'
 
 
 function App() {
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("/authorized")
-  //   .then(response => {
-  //     if(response.ok) {
-  //       response.json().then(user =>setUser(user))
-  //     } else {
-  //       setUser(null)
-  //     }
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch("/authorized")
+    .then(response => {
+      if(response.ok) {
+        response.json().then(user =>setUser(user))
+      } else {
+        setUser(null)
+      }
+    })
+  }, [])
 
-  // const updateUser = (user) => setUser(user)
-  // if(!user) return (
-  //   <>
-  //     <NavBar/>
-  //     <Authentication updateUser={updateUser}/>
-  //   </>
-  // )
+  const updateUser = (user) => setUser(user)
+  if(!user) return (
+    <>
+      <NavBar/>
+      <Authentication updateUser={updateUser}/>
+    </>
+  )
 
   return (
     <div className="App">
@@ -41,7 +41,7 @@ function App() {
         <Route path='/authentication'>
           <Authentication/>
         </Route>
-        <Route path="/chefs">
+        {/* <Route path="/chefs">
           <ChefsContainer/>
         </Route>
         <Route path="/calendar" >
@@ -52,7 +52,7 @@ function App() {
         </Route>
         <Route path='/recipes'>
           <RecipesContainer/>
-        </Route>
+        </Route> */}
       </Switch>
     </div> 
     )
