@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 body {
     display: flex;
     flex-direction: column;
@@ -9,6 +9,17 @@ body {
     min-height: 100vh;
     /* font-family: Hack, monospace; */
     font-family: 'Edu SA Beginner', cursive;
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: 'Edu SA Beginner', cursive;
+    background: #ededed;
   }
 
 .navbar {
@@ -80,6 +91,21 @@ body {
     transition: all 0.5s ease-in-out;
   }
   
+.home {
+  width: 50%;
+  margin: auto;
+  border: 1px grey;
+  padding: 10px;
+  font-family: 'Nanum Brush Script', cursive;
+  }
+
+  .home img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
+
   
 
   

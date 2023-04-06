@@ -1,13 +1,4 @@
-*, *:before, *:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
 
-body {
-    font-family: 'Edu SA Beginner', cursive;
-    background: #ededed;
-  }
   
   input, button {
     border: none;

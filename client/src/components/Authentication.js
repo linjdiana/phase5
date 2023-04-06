@@ -34,7 +34,6 @@ function Authentication({updateUser}) {
             .then(res => {
               if(res.ok){
                 res.json().then(user => {
-                  // console.log(user)
                   updateUser(user)
                   history.push('/')
                 })
