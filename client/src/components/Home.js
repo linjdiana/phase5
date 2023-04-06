@@ -8,7 +8,7 @@ function Home() {
             We are currently only testing in San Francisco, California, but hoping to expand. Please reach out if you're interested in working with us in a new city! </h1>
 
             <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-f3qxzs_4923c203.jpeg?region=0,0,600,600" />
-            <NavBar />
+            {/* <NavBar /> */}
         </>
     )
 }

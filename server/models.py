@@ -24,13 +24,13 @@ class User(db.Model, SerializerMixin):
     def authenticate(self, password):
         return bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
 
-# class Chef(db.Model, SerializerMixin):
-#     __table__name = 'chefs'
-#     id = db.Column(db.Integer, primary_key=True)
+class Chef(db.Model, SerializerMixin):
+    __table__name = 'chefs'
+    id = db.Column(db.Integer, primary_key=True)
 
-#     name=db.Column(db.String)
-#     image=db.Column(db.String)
-#     bio=db.Column(db.String)
+    name=db.Column(db.String)
+    image=db.Column(db.String)
+    bio=db.Column(db.String)
 
 # class Recipe(db.Model, SerializerMixin):
 #     __table__name = 'recipes'
@@ -40,6 +40,7 @@ class User(db.Model, SerializerMixin):
 #     image=db.Column(db.String)
 #     ingredients=db.Column(db.String)
 #     Recipe=db.Column(db.String)
+#     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
 # class Review(db.Model, SerializerMixin):
 #     __table__name = 'reviews'
