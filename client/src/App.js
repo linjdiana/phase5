@@ -27,29 +27,29 @@ function App() {
     })
   }, [])
 
-  // useEffect(() => {
-  //   fetch("/chefs")
-  //   .then((response) => response.json()) 
-  //   .then((chefData) => {
-  //     setChefs(chefData)
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch("/chefs")
+    .then((response) => response.json()) 
+    .then((chefData) => {
+      setChefs(chefData)
+    })
+  }, [])
 
-  // useEffect(() => {
-  //   fetch("/recipes")
-  //   .then((response) => response.json())
-  //   .then((recipeData) => {
-  //     setRecipes(recipeData)
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch("/recipes")
+    .then((response) => response.json())
+    .then((recipeData) => {
+      setRecipes(recipeData)
+    })
+  }, [])
 
-  // useEffect(() => {
-  //   fetch("/reviews")
-  //   .then((response) => response.json())
-  //   .then((reviewData) => {
-  //     setReviews(reviewData)
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch("/reviews")
+    .then((response) => response.json())
+    .then((reviewData) => {
+      setReviews(reviewData)
+    })
+  }, [])
 
 
   const updateUser = (user) => setUser(user)
@@ -70,7 +70,7 @@ function App() {
         <Route path='/authentication'>
           <Authentication updateUser={updateUser}/>
         </Route>
-        {/* <Route path="/chefs">
+        <Route path="/chefs">
           <ChefsContainer/>
         </Route>
         <Route path="/calendar" >
@@ -81,7 +81,7 @@ function App() {
         </Route>
         <Route path='/recipes'>
           <RecipesContainer/>
-        </Route> */}
+        </Route>
       </Switch>
     </div> 
     )

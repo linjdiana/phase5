@@ -33,11 +33,11 @@ api.add_resource(Login, '/login')
 class Signup(Resource):
     def post(self):
         form_json = request.get_json()
-        new_user = User(name=form_json['name'], email=form_json['email'], _password_hash=form_json['password'])
+        new_user = User(name=form_json['name'], email=form_json['email'])
         new_user.password_hash = form_json['password']
         db.session.add(new_user)
         db.session.commit()
-
+        session['user_id'] = new_user.id
         response = make_response(
             new_user.to_dict(),
             201
