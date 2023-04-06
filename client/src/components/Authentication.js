@@ -15,7 +15,7 @@ function Authentication({updateUser}) {
         email: yup.string().email(),
         password: yup.string().required("Please enter a password"),
       })
-
+    
     const formik = useFormik({
         initialValues: {
           name:'',
