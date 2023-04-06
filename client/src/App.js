@@ -12,6 +12,9 @@ import RecipesContainer from './components/RecipesContainer'
 
 function App() {
   const [user, setUser] = useState(null);
+  const [chefs, setChefs] = useState([]);
+  const [recipes, setRecipes] = useState([]);
+  const [ reviews, setReviews ] = useState([])
 
   useEffect(() => {
     fetch("/authorized")
@@ -24,21 +27,48 @@ function App() {
     })
   }, [])
 
+  // useEffect(() => {
+  //   fetch("/chefs")
+  //   .then((response) => response.json()) 
+  //   .then((chefData) => {
+  //     setChefs(chefData)
+  //   })
+  // }, [])
+
+  // useEffect(() => {
+  //   fetch("/recipes")
+  //   .then((response) => response.json())
+  //   .then((recipeData) => {
+  //     setRecipes(recipeData)
+  //   })
+  // }, [])
+
+  // useEffect(() => {
+  //   fetch("/reviews")
+  //   .then((response) => response.json())
+  //   .then((reviewData) => {
+  //     setReviews(reviewData)
+  //   })
+  // }, [])
+
+
   const updateUser = (user) => setUser(user)
   if(!user) return (
     <>
+    <NavBar />
       <Authentication updateUser={updateUser}/>
     </>
   )
 
   return (
     <div className="App">
+      <NavBar updateUser={updateUser}/>
       <Switch>
         <Route exact path='/'>
           <Home />
         </Route>
         <Route path='/authentication'>
-          <Authentication/>
+          <Authentication updateUser={updateUser}/>
         </Route>
         {/* <Route path="/chefs">
           <ChefsContainer/>

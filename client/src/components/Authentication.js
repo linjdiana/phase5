@@ -9,10 +9,7 @@ function Authentication({updateUser}) {
     const history = useHistory()
     const [error, setError] = useState(false)
   
-    const handleClick = () => {
-      setIsSignup(!isSignup);
-    };
-
+    const handleClick = () => setIsSignup((isSignup) => !isSignup)
     const formSchema = yup.object().shape({
         name: yup.string().required("Please enter a user name"),
         email: yup.string().email(),
@@ -55,9 +52,9 @@ function Authentication({updateUser}) {
         <div className="cont">
           <h2 style={{color:'red'}}> {formik.errors.name}</h2>
         {error&& <h2 style={{color:'red'}}> {error}</h2>}
-          <form className="s--signup" onSubmit={formik.handleSubmit}>
+          
             {isSignup ? (
-              <>
+              <form className="s--signup" onSubmit={formik.handleSubmit}>
                 <h2>Ready to join us?</h2>
                 <label>
                   <span>Name</span>
@@ -71,9 +68,12 @@ function Authentication({updateUser}) {
                   <span>Password</span>
                   <input type="password" />
                 </label>
-              </>
+                <button type="submit" className="submit" onClick={handleClick}>
+              Sign Up
+            </button>
+              </form>
             ) : (
-              <>
+              <form className="s--signup" onSubmit={formik.handleSubmit}>
                 <h2>Welcome back!</h2>
                 <label>
                   <span>Email</span>
@@ -83,12 +83,13 @@ function Authentication({updateUser}) {
                   <span>Password</span>
                   <input type="password" />
                 </label>
-              </>
-            )}
-            <button type="submit" className="submit" onClick={handleClick}>
-              {isSignup ? "Sign Up" : "Sign In"}
+                <button type="submit" className="submit" onClick={handleClick}>
+              Log In
             </button>
-          </form>
+              </form>
+            )}
+          
+          
   
           <div className="sub-cont">
             <div className="img">
