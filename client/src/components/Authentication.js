@@ -58,15 +58,15 @@ function Authentication({updateUser}) {
                 <h2>Ready to join us?</h2>
                 <label>
                   <span>Name</span>
-                  <input type="text" />
+                  <input type='text' name='name' value={formik.values.name} onChange={formik.handleChange} />
                 </label>
                 <label>
                   <span>Email</span>
-                  <input type="email" />
+                  <input type='text' name='email' value={formik.values.email} onChange={formik.handleChange} />
                 </label>
                 <label>
                   <span>Password</span>
-                  <input type="password" />
+                  <input type='password' name='password' value={formik.values.password} onChange={formik.handleChange} />
                 </label>
                 <button type="submit" className="submit" onClick={handleClick}>
               Sign Up
@@ -76,12 +76,12 @@ function Authentication({updateUser}) {
               <form className="s--signup" onSubmit={formik.handleSubmit}>
                 <h2>Welcome back!</h2>
                 <label>
-                  <span>Email</span>
-                  <input type="email" />
+                  <span>User Name</span>
+                  <input type='text' name='name' value={formik.values.name} onChange={formik.handleChange} />
                 </label>
                 <label>
                   <span>Password</span>
-                  <input type="password" />
+                  <input type='password' name='password' value={formik.values.password} onChange={formik.handleChange} />
                 </label>
                 <button type="submit" className="submit" onClick={handleClick}>
               Log In
