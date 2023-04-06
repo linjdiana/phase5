@@ -13,7 +13,7 @@ body {
     border: none;
     outline: none;
     background: none;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    /* font-family: "Open Sans", Helvetica, Arial, sans-serif; */
   }
   
   .tip {
@@ -200,13 +200,6 @@ body {
     text-align: center;
   }
   
-  .forgot-pass {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 12px;
-    color: #cfcfcf;
-  }
-  
   .submit {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -239,17 +232,3 @@ body {
     transform: translate3d(0, 0, 0);
   }
   
-  .icon-link {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    width: 32px;
-  }
-  .icon-link img {
-    width: 100%;
-    vertical-align: top;
-  }
-  .icon-link--twitter {
-    left: auto;
-    right: 5px;
-  }

@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     with app.app_context():
         users = []
-        user1=User(name='Diana', email='linjdiana@gmail.com', _password_hash='')
+        user1=User(name='12', email='di@blah.com', _password_hash='$2b$12$htA7zkYMHNiigaNWShm53.2rJiMX0HkjN8/2xYZTrROX2HxVrYF.G')
         users.append(user1)
         db.session.add_all(users)
         db.session.commit()
