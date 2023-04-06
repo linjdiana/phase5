@@ -27,7 +27,6 @@ function App() {
   const updateUser = (user) => setUser(user)
   if(!user) return (
     <>
-      <NavBar/>
       <Authentication updateUser={updateUser}/>
     </>
   )

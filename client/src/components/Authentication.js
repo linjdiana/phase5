@@ -53,7 +53,9 @@ function Authentication({updateUser}) {
 
     return (
         <div className="cont">
-          <div className={isSignup ? "cont.s--signup" : "cont.s--signin"}>
+          <h2 style={{color:'red'}}> {formik.errors.name}</h2>
+        {error&& <h2 style={{color:'red'}}> {error}</h2>}
+          <form className="s--signup" onSubmit={formik.handleSubmit}>
             {isSignup ? (
               <>
                 <h2>Ready to join us?</h2>
@@ -83,10 +85,10 @@ function Authentication({updateUser}) {
                 </label>
               </>
             )}
-            <button type="button" className="submit" onClick={handleClick}>
+            <button type="submit" className="submit" onClick={handleClick}>
               {isSignup ? "Sign Up" : "Sign In"}
             </button>
-          </div>
+          </form>
   
           <div className="sub-cont">
             <div className="img">
