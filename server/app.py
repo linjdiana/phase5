@@ -2,7 +2,7 @@ from flask import request, make_response, jsonify, session, abort
 from flask_restful import Resource, Api
 from werkzeug.exceptions import NotFound, Unauthorized
 from config import db, app, api
-from models import User
+from models import User, Chef
 
 api = Api(app)
 
@@ -72,6 +72,16 @@ def handle_not_found(e):
         404
     )
     return response
+
+class Chefs(Resource):
+    def get(self):
+        chef_list = [chef.to_dict() for chef in Chef.query.all()]
+        response = make_response(
+            chef_list,
+            200
+        )
+        return response
+api.add_resource(Chefs, '/chefs')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

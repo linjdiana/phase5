@@ -12,6 +12,22 @@ class User(db.Model, SerializerMixin):
     email = db.Column(db.String)
     _password_hash = db.Column(db.String)
 
+    @validates('name')
+    def validates_name(self, key, value):
+        names_list = User.query.all()
+        names = [name.name for name in names_list]
+        if value in names:
+            raise ValueError('Email already exists') 
+        return
+
+    @validates('email')
+    def validates_email(self, key, value):
+        emails_list = User.query.all()
+        emails = [email.email for email in emails_list]
+        if value in emails:
+            raise ValueError('Email already exists') 
+        return
+
     @hybrid_property 
     def password_hash(self):
         return self._password_hash
@@ -24,16 +40,16 @@ class User(db.Model, SerializerMixin):
     def authenticate(self, password):
         return bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
 
-# class Chef(db.Model, SerializerMixin):
-#     __table__name = 'chefs'
-#     id = db.Column(db.Integer, primary_key=True)
+class Chef(db.Model, SerializerMixin):
+    __tablename__ = 'chefs'
+    id = db.Column(db.Integer, primary_key=True)
 
-#     name=db.Column(db.String)
-#     image=db.Column(db.String)
-#     bio=db.Column(db.String)
+    name=db.Column(db.String)
+    image=db.Column(db.String)
+    bio=db.Column(db.String)
 
 # class Recipe(db.Model, SerializerMixin):
-#     __table__name = 'recipes'
+#     __tablename__ = 'recipes'
 #     id = db.Column(db.Integer, primary_key=True)
 
 #     title=db.Column(db.String)
@@ -43,7 +59,7 @@ class User(db.Model, SerializerMixin):
 #     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
 # class Review(db.Model, SerializerMixin):
-#     __table__name = 'reviews'
+#     __tablename__ = 'reviews'
 #     id = db.Column(db.Integer, primary_key=True)
 
 #     user = db.Column(db.String)
