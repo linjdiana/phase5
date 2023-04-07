@@ -31,7 +31,7 @@ const Card = styled.div`
 
   .content {
     position: absolute;
-    width: 800px;
+    width: 1000px;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;
@@ -40,7 +40,7 @@ const Card = styled.div`
   }
 
   &:hover .content {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
   }
 
   .front,
@@ -76,7 +76,7 @@ const Card = styled.div`
     justify-content: center;
     background-color: #03446a;
     color: #fff;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) rotate(180deg);
     p {
       font-size: 1.5rem;
       text-align: center;

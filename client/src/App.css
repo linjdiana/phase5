@@ -63,7 +63,7 @@ body {
     display: flex;
   }
 .navbar nav .menuItems li {
-    margin: auto;
+    margin: 50px;
   }
 .navbar nav .menuItems li a {
     text-decoration: none;
