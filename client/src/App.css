@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cambay&display=swap');
 body {
     display: flex;
     flex-direction: column;
@@ -28,7 +28,6 @@ body {
   }
   
 .navbar p {
-    margin: 16px;
     font-size: 96px;
     color: #ccc;
     text-transform: uppercase;
@@ -96,7 +95,8 @@ body {
   margin: auto;
   border: 1px grey;
   padding: 10px;
-  font-family: 'Nanum Brush Script', cursive;
+  font-family: 'Cambay', sans-serif;
+  font-weight: 200;
   }
 
   .home img {

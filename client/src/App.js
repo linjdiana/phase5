@@ -71,16 +71,16 @@ function App() {
           <Authentication updateUser={updateUser}/>
         </Route>
         <Route path="/chefs">
-          <ChefsContainer/>
+          <ChefsContainer chefs={chefs}/>
         </Route>
         <Route path="/calendar" >
           <Calendar/>
         </Route>
         <Route path='/reviews'>
-          <ReviewsContainer/>
+          <ReviewsContainer reviews={reviews}/>
         </Route>
         <Route path='/recipes'>
-          <RecipesContainer/>
+          <RecipesContainer recipes={recipes}/>
         </Route>
       </Switch>
     </div> 
