@@ -6,15 +6,13 @@ function ChefCard({ chefObj }) {
 
     return (
         <Card>
-        <div class="content">
-            <div class="front">
-                <h1>
-                    <strong>{name}</strong>
-                </h1>
-            <img src={image} />
+        <div className="content">
+            <div className="front">
+                <h2><strong>{name}</strong></h2>
+                <img src={image} alt={name}/>
             </div>
                 <div class="back">
-                {bio}
+                <p>{bio}</p>
                 </div>
             </div>
         </Card>
@@ -22,49 +20,77 @@ function ChefCard({ chefObj }) {
 }
 
 const Card = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    height: 300px;
-    margin: -150px;
-    float: left;
-    perspective: 500px;
-}
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  margin: 0 10px 20px;
+  float: left;
+  perspective: 1000px;
 
-.content {
+  .content {
     position: absolute;
     width: 100%;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-
-    transition: transform 1s;
     transform-style: preserve-3d;
-}
-
-.card:hover .content {
-    transform: rotateY(180deg);
     transition: transform 0.5s;
-}
+  }
 
-.front,
-.back {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: white;
-    line-height: 300px;
-    color: #03446a;
-    text-align: center;
-    font-size: 60px;
-    border-radius: 5px;
-    backface-visibility: hidden;
-}
-
-.back {
-    background: #03446a;
-    color: white;
+  &:hover .content {
     transform: rotateY(180deg);
-}`;
+  }
+
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+  }
+
+  .front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #03446a;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #03446a;
+    color: #fff;
+    transform: rotateY(180deg);
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 1.5;
+      padding: 0 20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 20px);
+  }
+
+  @media screen and (min-width: 992px) {
+    width: calc(33.333% - 20px);
+  }
+`;
+
 
 export default ChefCard;
