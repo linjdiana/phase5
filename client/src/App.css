@@ -25,6 +25,7 @@ body {
 .navbar {
     color: #727272;
     text-align: center;
+    margin: 0 auto;
   }
   
 .navbar p {
@@ -62,7 +63,7 @@ body {
     display: flex;
   }
 .navbar nav .menuItems li {
-    margin: 50px;
+    margin: auto;
   }
 .navbar nav .menuItems li a {
     text-decoration: none;

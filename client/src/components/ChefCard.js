@@ -19,20 +19,24 @@ function ChefCard({ chefObj }) {
     );
 }
 
+export default ChefCard;
+
 const Card = styled.div`
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 250px;
   margin: 0 10px 20px;
   perspective: 1000px;
+  
 
   .content {
     position: absolute;
-    width: 1000px;
+    width: 800px;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;
     transition: transform 0.5s;
+    margin: 0 auto;
   }
 
   &:hover .content {
@@ -91,4 +95,3 @@ const Card = styled.div`
 `;
 
 
-export default ChefCard;
