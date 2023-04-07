@@ -22,15 +22,13 @@ function ChefCard({ chefObj }) {
 const Card = styled.div`
   position: relative;
   width: 100%;
-  max-width: 400px;
   height: 300px;
   margin: 0 10px 20px;
-  float: left;
   perspective: 1000px;
 
   .content {
     position: absolute;
-    width: 100%;
+    width: 1000px;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;
