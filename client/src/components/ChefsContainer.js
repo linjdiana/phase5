@@ -2,14 +2,15 @@ import ChefCard from './ChefCard'
 import styled from 'styled-components'
 
 function ChefsContainer({ chefs }) {
-    const chefItems = chefs.map(chef => {
-        return <ChefCard key={chef.id} chef={chef} />;
+    const chefItems = chefs.map(chefObj => {
+        return <ChefCard key={chefObj.id} chefObj={chefObj} />;
       });
 
     return (
         <div className="chefspage">
-            <Title> Argh </Title>
+           
             <div className="chefcardcontainer">
+            {/* {chefItems} */}
             {chefItems}
             </div>
         </div>
@@ -18,4 +19,3 @@ function ChefsContainer({ chefs }) {
 
 export default ChefsContainer
 
-const Title = styled.h1

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-function ChefCard({ chef }) {
-    const { name, image, bio } = chef;
+function ChefCard({ chefObj }) {
+    const { name, image, bio } = chefObj;
 
     return (
         <Card>
