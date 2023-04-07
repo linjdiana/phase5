@@ -6,8 +6,8 @@ function ReviewsContainer() {
         <div className="reviewspage">
             <h1> aloha!
             </h1>
-            {/* <ReviewCard />
-            <ReviewForm /> */}
+            <ReviewCard />
+            <ReviewForm />
         </div>
     )
 }

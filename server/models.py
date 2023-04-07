@@ -54,7 +54,7 @@ class Recipe(db.Model, SerializerMixin):
 
     title=db.Column(db.String)
     image=db.Column(db.String)
-    Recipe=db.Column(db.String)
+    Description=db.Column(db.String)
     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
 # class Review(db.Model, SerializerMixin):
