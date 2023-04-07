@@ -82,7 +82,7 @@ function Authentication({updateUser}) {
                   <span>Password</span>
                   <input type='password' name='password' value={formik.values.password} onChange={formik.handleChange} />
                 </label>
-                <button type="submit" className="submit">
+                <button type="submit" className="submit"> 
               Log In
             </button>
               </form>

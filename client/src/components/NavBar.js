@@ -17,7 +17,7 @@ function NavBar({updateUser}) {
     })
  }
     return (
-        <div class="navbar">
+        <div className="navbar">
           {/* <div>in beta in sf</div> */}
           <p data-item='FÜBER'>FÜBER</p>
 

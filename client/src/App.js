@@ -62,10 +62,11 @@ function App() {
 
   return (
     <div className="App">
+      <div className="container">
       <NavBar updateUser={updateUser}/>
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Home updateUser={updateUser}/>
         </Route>
         <Route path='/authentication'>
           <Authentication updateUser={updateUser}/>
@@ -83,6 +84,7 @@ function App() {
           <RecipesContainer recipes={recipes}/>
         </Route>
       </Switch>
+      </div>
     </div> 
     )
 }
