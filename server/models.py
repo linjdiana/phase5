@@ -48,21 +48,32 @@ class Chef(db.Model, SerializerMixin):
     image=db.Column(db.String)
     bio=db.Column(db.String)
 
+    review = db.relationship('Review', backref='chef')
+
+    def validates_chef_id(self, key, value):
+        chefs = Chef.query.all()
+        chef_ids = [chef.id for chef in chefs]
+        if not value in chef_ids:
+            raise ValueError("Not a chef... yet!")
+        return value
+
 class Recipe(db.Model, SerializerMixin):
     __tablename__ = 'recipes'
     id = db.Column(db.Integer, primary_key=True)
 
     title=db.Column(db.String)
     image=db.Column(db.String)
-    Description=db.Column(db.String)
+    description=db.Column(db.String)
     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
-# class Review(db.Model, SerializerMixin):
-#     __tablename__ = 'reviews'
-#     id = db.Column(db.Integer, primary_key=True)
+    chef = db.relationship('Chef', backref='recipe')
 
-#     user = db.Column(db.String)
-#     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-#     rating = db.Column(db.Integer)
-#     text = db.Column(db.String)
+class Review(db.Model, SerializerMixin):
+    __tablename__ = 'reviews'
+    id = db.Column(db.Integer, primary_key=True)
+
+    user = db.Column(db.String)
+    chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    rating = db.Column(db.Integer)
+    text = db.Column(db.String)
