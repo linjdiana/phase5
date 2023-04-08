@@ -8,7 +8,7 @@ from config import db, bcrypt
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
+    name = db.Column(db.String)
     email = db.Column(db.String)
     _password_hash = db.Column(db.String)
 
@@ -17,8 +17,8 @@ class User(db.Model, SerializerMixin):
         names_list = User.query.all()
         names = [name.name for name in names_list]
         if value in names:
-            raise ValueError('Name already exists') 
-        return value
+            raise ValueError('Email already exists') 
+        return
 
     @validates('email')
     def validates_email(self, key, value):
@@ -26,7 +26,7 @@ class User(db.Model, SerializerMixin):
         emails = [email.email for email in emails_list]
         if value in emails:
             raise ValueError('Email already exists') 
-        return value
+        return
 
     @hybrid_property 
     def password_hash(self):
@@ -39,8 +39,6 @@ class User(db.Model, SerializerMixin):
     
     def authenticate(self, password):
         return bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
-    
-    # reviews = db.relationship('Review', backref='user')
 
 class Chef(db.Model, SerializerMixin):
     __tablename__ = 'chefs'
@@ -50,32 +48,22 @@ class Chef(db.Model, SerializerMixin):
     image=db.Column(db.String)
     bio=db.Column(db.String)
 
-    review = db.relationship('Review', backref='chef')
+# class Recipe(db.Model, SerializerMixin):
+#     __tablename__ = 'recipes'
+#     id = db.Column(db.Integer, primary_key=True)
 
-    def validates_chef_id(self, key, value):
-        chefs = Chef.query.all()
-        chef_ids = [chef.id for chef in chefs]
-        if not value in chef_ids:
-            raise ValueError("Not a chef... yet!")
-        return value
+#     title=db.Column(db.String)
+#     image=db.Column(db.String)
+#     ingredients=db.Column(db.String)
+#     Recipe=db.Column(db.String)
+#     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
-class Recipe(db.Model, SerializerMixin):
-    __tablename__ = 'recipes'
-    id = db.Column(db.Integer, primary_key=True)
+# class Review(db.Model, SerializerMixin):
+#     __tablename__ = 'reviews'
+#     id = db.Column(db.Integer, primary_key=True)
 
-    title=db.Column(db.String)
-    image=db.Column(db.String)
-    description=db.Column(db.String)
-    chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
-
-    chef = db.relationship('Chef', backref='recipe')
-
-class Review(db.Model, SerializerMixin):
-    __tablename__ = 'reviews'
-    id = db.Column(db.Integer, primary_key=True)
-
-    user = db.Column(db.String)
-    chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    rating = db.Column(db.Integer)
-    text = db.Column(db.String)
+#     user = db.Column(db.String)
+#     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
+#     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+#     rating = db.Column(db.Integer)
+#     text = db.Column(db.String)
