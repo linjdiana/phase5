@@ -1,9 +1,13 @@
 import RecipeCard from './RecipeCard'
 
-function RecipesContainer() {
+function RecipesContainer({ recipes }) {
+    const recipeItems = recipes.map(recipeObj => {
+        return <RecipeCard key={recipeObj.id} recipeObj={recipeObj} />;
+    });
+
     return (
         <div className="recipespage">
-            <RecipeCard />
+            {recipeItems}
         </div>
     )
 }

@@ -9,24 +9,8 @@ class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    email = db.Column(db.String)
+    email = db.Column(db.String, unique=True, nullable=False)
     _password_hash = db.Column(db.String)
-
-    @validates('name')
-    def validates_name(self, key, value):
-        names_list = User.query.all()
-        names = [name.name for name in names_list]
-        if value in names:
-            raise ValueError('Name already exists') 
-        return value
-
-    @validates('email')
-    def validates_email(self, key, value):
-        emails_list = User.query.all()
-        emails = [email.email for email in emails_list]
-        if value in emails:
-            raise ValueError('Email already exists') 
-        return value
 
     @hybrid_property 
     def password_hash(self):
@@ -55,9 +39,10 @@ class Recipe(db.Model, SerializerMixin):
     title=db.Column(db.String)
     image=db.Column(db.String)
     description=db.Column(db.String)
-    chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
+    chef_id = db.Column(db.Integer)
+    # chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
-    chef = db.relationship('Chef', backref='recipe')
+    # chef = db.relationship('Chef', backref='recipe')
 
 # class Review(db.Model, SerializerMixin):
 #     __tablename__ = 'reviews'

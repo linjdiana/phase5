@@ -44,7 +44,6 @@ if __name__ == '__main__':
         db.session.add_all(chefs)
         db.session.commit()
 
-        
         recipes = []
         recipe1 = Recipe(title='Beef Noodle Soup', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/beef%20noodle%20soup.jpeg', description='Diana sources hand made soup noodles from Clement street (the real Chinatown of San Francisco) and slow cooks the beef for eight hours before serving it with flavorful broth. With an extra hour to spare, you can learn to make hand made noodles with her!', chef_id=1)
         recipes.append(recipe1)
