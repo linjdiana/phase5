@@ -8,7 +8,7 @@ from config import db, bcrypt
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
+    name = db.Column(db.String, nullable=False)
     email = db.Column(db.String)
     _password_hash = db.Column(db.String)
 
@@ -17,8 +17,8 @@ class User(db.Model, SerializerMixin):
         names_list = User.query.all()
         names = [name.name for name in names_list]
         if value in names:
-            raise ValueError('Email already exists') 
-        return
+            raise ValueError('Name already exists') 
+        return value
 
     @validates('email')
     def validates_email(self, key, value):
@@ -26,7 +26,7 @@ class User(db.Model, SerializerMixin):
         emails = [email.email for email in emails_list]
         if value in emails:
             raise ValueError('Email already exists') 
-        return
+        return value
 
     @hybrid_property 
     def password_hash(self):
@@ -54,9 +54,10 @@ class Recipe(db.Model, SerializerMixin):
 
     title=db.Column(db.String)
     image=db.Column(db.String)
-    ingredients=db.Column(db.String)
-    Recipe=db.Column(db.String)
+    description=db.Column(db.String)
     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
+
+    chef = db.relationship('Chef', backref='recipe')
 
 # class Review(db.Model, SerializerMixin):
 #     __tablename__ = 'reviews'
