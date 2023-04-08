@@ -48,15 +48,15 @@ class Chef(db.Model, SerializerMixin):
     image=db.Column(db.String)
     bio=db.Column(db.String)
 
-# class Recipe(db.Model, SerializerMixin):
-#     __tablename__ = 'recipes'
-#     id = db.Column(db.Integer, primary_key=True)
+class Recipe(db.Model, SerializerMixin):
+    __tablename__ = 'recipes'
+    id = db.Column(db.Integer, primary_key=True)
 
-#     title=db.Column(db.String)
-#     image=db.Column(db.String)
-#     ingredients=db.Column(db.String)
-#     Recipe=db.Column(db.String)
-#     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
+    title=db.Column(db.String)
+    image=db.Column(db.String)
+    ingredients=db.Column(db.String)
+    Recipe=db.Column(db.String)
+    chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
 # class Review(db.Model, SerializerMixin):
 #     __tablename__ = 'reviews'
