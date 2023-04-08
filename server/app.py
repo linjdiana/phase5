@@ -2,7 +2,7 @@ from flask import request, make_response, jsonify, session, abort
 from flask_restful import Resource, Api
 from werkzeug.exceptions import NotFound, Unauthorized
 from config import db, app, api
-from models import User, Chef, Recipe
+from models import User, Chef, Recipe, Review
 
 api = Api(app)
 
@@ -94,33 +94,16 @@ class Recipes(Resource):
     
 api.add_resource(Recipes, '/recipes')
 
-# class Reviews(Resource):
-#     def get(self):
-#         review_list = [r.to_dict() for r in Review.query.all()]
-#         response = make_response(
-#             review_list,
-#             200
-#         )
-#         return response
+class Reviews(Resource):
+    def get(self):
+        review_list = [r.to_dict() for r in Review.query.all()]
+        response = make_response(
+            review_list,
+            200
+        )
+        return response
     
-#     def post(self):
-#         data=request.get_json()
-#         new_review = Review(
-#             user=data['name'],
-#             rating=data['rating'],
-#             user_id=session['user_id'],
-#             chef_id=data['workout_id'],
-#             text=data['text']
-#         )
-#         db.session.add(new_review)
-#         db.session.commit()
-
-#         response = make_response(
-#             new_review.to_dict(),
-#             201
-#         )
-#         return response
-# api.add_resource(Reviews, '/reviews')
+  
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
