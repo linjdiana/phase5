@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cambay&display=swap');
 body {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     position: relative;

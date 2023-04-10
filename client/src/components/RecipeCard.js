@@ -3,25 +3,16 @@ import styled from 'styled-components';
 
 function RecipeCard({ recipeObj }) {
     const { id, title, image, description, chef } = recipeObj
-    // const [ showRecipe, setShowRecipe] = useState(false)
-    // function handleClick() {
-    //     setShowRecipe((currentImage) => !currentImage)
-    // }
-
-    // const bioText = showRecipe ? <p>{recipe}</p> : null;
-    // const buttonText = showRecipe? "Hide Recipe" : "Show Recipe"
 
     return (
         <Card>
         <div className="content">
             <div className="front">
-                
                 <img src={image} alt={title}/>
             </div>
                 <div class="back">
-                <h2><strong>{title}</strong></h2>
                 <p>{description}</p>
-                <p>{chef?.name}</p>
+                {/* <p>{chef?.name}</p> */}
                 </div>
             </div>
         </Card>
@@ -32,9 +23,10 @@ export default RecipeCard
 
 const Card = styled.div`
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 250px;
-  margin: 0 10px 20px;
+  margin: 10px 20px;
+  margin-bottom: 20px;
   perspective: 1000px;
   
 
@@ -72,8 +64,7 @@ const Card = styled.div`
       object-fit: cover;
     }
     h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
+      font-size: 10px;
       color: #03446a;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -87,9 +78,9 @@ const Card = styled.div`
     color: #fff;
     transform: rotateY(180deg) rotate(180deg);
     p {
-      font-size: 1.5rem;
+      font-size: 10px
       text-align: center;
-      line-height: 1.5;
+      line-height: 1;
       padding: 0 20px;
     }
   }
