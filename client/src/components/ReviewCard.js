@@ -5,69 +5,34 @@ function ReviewCard({ reviewObj }) {
     const { id, user, rating, text } = reviewObj
     
     return (
+      <Card>
       <div className="content">
-          <li><strong>{user}</strong></li>
-          <li>{rating}</li>
-          <li>{text}</li>
-        <h1>heLLOOO??</h1>
+          <ul><strong>{user}</strong></ul>
+          <ul>{rating}</ul>
+          <ul>{text}</ul>
       </div>
+      </Card>
     );
 }
 
 
 export default ReviewCard
 
-// const Card = styled.div`
-//   position: relative;
-//   width: 100%;
-//   height: 250px;
-//   margin: 0 10px 20px;
-//   perspective: 1000px;
-  
-
-//   .content {
-//     position: absolute;
-//     width: 1000px;
-//     height: 100%;
-//     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-//     transform-style: preserve-3d;
-//     transition: transform 0.5s;
-//     margin: 0 auto;
-//   }
-
-//   &:hover .content {
-//     transform: rotateX(180deg);
-//   }
-
-//   .front,
-//   .back {
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     backface-visibility: hidden;
-//     border-radius: 5px;
-//   }
-
-//   .front {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background-color: #fff;
-//     h2 {
-//       font-size: 2.5rem;
-//       font-weight: bold;
-//       color: #03446a;
-//       text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//     }
-//   }
-
-//   @media screen and (min-width: 768px) {
-//     width: calc(50% - 20px);
-//   }
-
-//   @media screen and (min-width: 992px) {
-//     width: calc(33.333% - 20px);
-//   }
-// `;
+const Card = styled.div`
+overflow: hidden;
+padding: 0.75rem; 
+margin: 0.50rem;
+width: 20rem;
+height: auto; 
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+background: white;
+opacity: 0.82; 
+display: flex;
+align-items: flex-start;
+justify-content: center;
+flex-direction: column;
+border-radius: 5px;
+}
+`;
 
 

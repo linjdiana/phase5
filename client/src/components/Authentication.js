@@ -24,26 +24,27 @@ function Authentication({updateUser}) {
         },
         validationSchema: formSchema,
         onSubmit: (values) => {
-          fetch(values.password ? '/user' : (isSignup ? '/signup' : '/login'), {
-            method: values.password ? 'POST' : 'GET',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(values)
-          })
-          .then(res => {
-            if(res.ok){
-              res.json().then(user => {
-                updateUser(user)
-                history.push('/')
-              })
-            } else {
-              res.json().then(error => setError(error.message))
-            }
-          })  
-        }
+            fetch(isSignup?'/signup':'/login',{
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(values),
+            })
+            .then(res => {
+              if(res.ok){
+                res.json().then(user => {
+                  updateUser(user)
+                  history.push('/')
+                })
+              } else {
+                //15.2 render the error if the user's authentication fails
+                res.json().then(error => setError(error.message))
+              }
+            })
            
-        })
+        },
+      })
 
 
     return (

@@ -1,7 +1,6 @@
-import hashlib
 from random import randint, choice as rc
 from faker import Faker
-
+from werkzeug.security import generate_password_hash
 from app import app
 from models import db, User, Chef, Recipe, Review
 
@@ -12,19 +11,19 @@ if __name__ == '__main__':
         Chef.query.delete()
 
         users = []
-        user1=User(name='Roberto', email='CEO@bobsburgers.com', password_hash=hashlib.sha256(b"hello1").hexdigest())
+        user1 = User(name='Roberto', email='CEO@bobsburgers.com', password_hash=generate_password_hash('hello1'))
         users.append(user1)
-        user2=User(name='John', email='john@applebees.com', password_hash=hashlib.sha256(b"orangessuck").hexdigest())
+        user2 = User(name='John', email='john@applebees.com', password_hash=generate_password_hash('orangessuck'))
         users.append(user2)
-        user3=User(name='diana', email='diana', password_hash=hashlib.sha256(b"12345").hexdigest())
+        user3 = User(name='diana', email='diana', password_hash=generate_password_hash('12345'))
         users.append(user3)
-        user4=User(name='GordonRamsay', email='gordon@meditating.com', password_hash=hashlib.sha256(b"meditatingsux").hexdigest())
+        user4 = User(name='GordonRamsay', email='gordon@meditating.com', password_hash=generate_password_hash('meditatingsux'))
         users.append(user4)
-        user5=User(name='Antonio', email='tony@bourdain.com', password_hash=hashlib.sha256(b"imstillhere").hexdigest())
+        user5 = User(name='Antonio', email='tony@bourdain.com', password_hash=generate_password_hash('imstillhere'))
         users.append(user5)
-        user6=User(name='Julia', email='CEO@applebees.com', password_hash=hashlib.sha256(b"aheadofthejohns").hexdigest())
+        user6 = User(name='Julia', email='CEO@applebees.com', password_hash=generate_password_hash('aheadofthejohns'))
         users.append(user6)
-        user7=User(name='dianasbiggestfan', email='chef@michelin.com', password_hash=hashlib.sha256(b"dianarocks").hexdigest())
+        user7 = User(name='dianasbiggestfan', email='chef@michelin.com', password_hash=generate_password_hash('dianarocks'))
         users.append(user7)
 
         db.session.add_all(users)
