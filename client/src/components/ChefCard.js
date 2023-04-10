@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 function ChefCard({ chefObj }) {
-    const { name, image, bio } = chefObj;
+    const { id, name, image, bio } = chefObj;
 
     return (
         <Card>
@@ -11,7 +11,7 @@ function ChefCard({ chefObj }) {
                 <h2><strong>{name}</strong></h2>
                 <img src={image} alt={name}/>
             </div>
-                <div class="back">
+                <div className="back">
                 <p>{bio}</p>
                 </div>
             </div>
