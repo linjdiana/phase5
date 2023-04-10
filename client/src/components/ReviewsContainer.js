@@ -6,13 +6,12 @@ function ReviewsContainer({ reviews }) {
         return <ReviewCard key={reviewObj.id} reviewObj={reviewObj} />;
       });
 
+
     return (
-        <div className="reviewspage">
-            <h1> aloha!
-            </h1>
-            {reviewItems}
-            <ReviewForm />
+        <div>
+        {reviewItems}
+        <h1>HIII</h1>
         </div>
-    )
+    );
 }
 export default ReviewsContainer
