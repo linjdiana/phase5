@@ -1,15 +1,24 @@
 import RecipeCard from './RecipeCard'
 import styled from 'styled-components';
 import RecipeSearchBar from './RecipeSearchBar'
+import React, { useState } from 'react'
 
 function RecipesContainer({ recipes }) {
-    const recipeItems = recipes.map(recipeObj => {
+    const [searchQuery, setSearchQuery] = useState("");
+    const filteredRecipes = recipes.filter(recipe =>
+        recipe?.title?.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        recipe?.chef?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        recipe?.description?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    const recipeItems = filteredRecipes.map(recipeObj => {
         return <RecipeCard key={recipeObj.id} recipeObj={recipeObj} />;
     });
 
+
     return (
         <>
-        <RecipeSearchBar />
+        <RecipeSearchBar setSearchQuery = {setSearchQuery} searchQuery={searchQuery}/>
         {/* <input >
             </input> */}
         <Container>
