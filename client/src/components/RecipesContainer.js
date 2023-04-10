@@ -37,10 +37,13 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-    .recipespage {
+  .recipespage {
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-y: auto; /* adds horizontal scroll */
+    max-height: 80vh;
   }
 
   @media screen and (max-width: 767px) {
