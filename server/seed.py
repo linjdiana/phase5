@@ -78,7 +78,7 @@ if __name__ == '__main__':
         recipe16 = Recipe(title='Pecan Pie', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pecan%20pie.webp', description='Everybody\'s new favorite pie flavor.', chef_id=4)
         recipes.append(recipe16)
         recipe17 = Recipe(title='Texas bbq', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/BBQ.jpeg', description='Everything is slowly cooked and prepped at Tony\'s. He would usually bring sides like mac n cheese, main courses of ribs and brisket. It\s kind of like omakase but for beef.', chef_id=4)
-        recipes.append(recipe12)
+        recipes.append(recipe17)
         recipe18 = Recipe(title='Beer', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/two-beers.webp', description='Of course Tony brews his own IPA.', chef_id=4)
         recipes.append(recipe18)
         recipe19 = Recipe(title='Mango Lassi', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Mango-Lassi-2-1.jpg', description='This delectable drink is made with yogurt, mango puree, milk, sugar and cardamom. Usually served at room temperature, we found that it\'s even more delicious chilled on a nice summer night.', chef_id=5)
