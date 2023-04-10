@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 function RecipeCard({ recipeObj }) {
-    const { title, image, description } = recipeObj
+    const { id, title, image, description, chef } = recipeObj
     // const [ showRecipe, setShowRecipe] = useState(false)
     // function handleClick() {
     //     setShowRecipe((currentImage) => !currentImage)
@@ -15,11 +15,13 @@ function RecipeCard({ recipeObj }) {
         <Card>
         <div className="content">
             <div className="front">
-                <h2><strong>{title}</strong></h2>
+                
                 <img src={image} alt={title}/>
             </div>
                 <div class="back">
+                <h2><strong>{title}</strong></h2>
                 <p>{description}</p>
+                <p>{chef?.name}</p>
                 </div>
             </div>
         </Card>
@@ -38,7 +40,7 @@ const Card = styled.div`
 
   .content {
     position: absolute;
-    width: 1000px;
+    width: 250px;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;

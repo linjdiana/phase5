@@ -26,21 +26,26 @@ class User(db.Model, SerializerMixin):
 
 class Chef(db.Model, SerializerMixin):
     __tablename__ = 'chefs'
+
+    # serialize_rules = ('-recipe')
     id = db.Column(db.Integer, primary_key=True)
 
     name=db.Column(db.String)
     image=db.Column(db.String)
     bio=db.Column(db.String)
 
+
 class Recipe(db.Model, SerializerMixin):
     __tablename__ = 'recipes'
     id = db.Column(db.Integer, primary_key=True)
 
+    # serialize_rules = ('-chef.bio', '-chef.image')
+
     title=db.Column(db.String)
     image=db.Column(db.String)
     description=db.Column(db.String)
-    chef_id = db.Column(db.Integer)
-    # chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
+    # chef_id = db.Column(db.Integer)
+    chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
     # chef = db.relationship('Chef', backref='recipe')
 

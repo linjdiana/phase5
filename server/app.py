@@ -94,5 +94,50 @@ class Recipes(Resource):
     
 api.add_resource(Recipes, '/recipes')
 
+class ChefByID(Resource):
+    def get(self, id):
+        chef = Chef.query.filter_by(id=id).first()
+        if not chef:
+            return make_response({
+                "error": "Chef not found"
+            }, 404)
+        response = make_response(
+            chef.to_dict(),
+            200
+        )
+        return response
+
+api.add_resource(ChefByID, '/chefs/<int:id>')
+
+# class RecipesByID(Resource):
+#     def get(self, id):
+#         recipe = Recipe.query.filter_by(id=id).first()
+#         if not recipe:
+#             return make_response({
+#                 "error": "Chef not found"
+#             }, 404)
+#         response = make_response(
+#             recipe.to_dict(),
+#             200
+#         )
+#         return response
+
+# api.add_resource(RecipesByID, '/recipes/<int:id>')
+
+class RecipesByChefID(Resource):
+    def get(self, id):
+        recipes = Recipe.query.filter_by(chef_id=id).all()
+        if not recipes:
+            return make_response({
+                "error": "No recipes found for this chef ID"
+            }, 404)
+        response = make_response(
+            [recipe.to_dict() for recipe in recipes],
+            200
+        )
+        return response
+
+api.add_resource(RecipesByChefID, '/recipes_by_chef/<int:id>')
+
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

@@ -8,9 +8,7 @@ function ChefsContainer({ chefs }) {
 
     return (
         <div className="chefspage">
-           
             <div className="chefcardcontainer">
-            {/* {chefItems} */}
             {chefItems}
             </div>
         </div>

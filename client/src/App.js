@@ -51,7 +51,6 @@ function App() {
     })
   }, [])
 
-
   const updateUser = (user) => setUser(user)
   if(!user) return (
     <>
@@ -83,6 +82,9 @@ function App() {
         <Route path='/recipes'>
           <RecipesContainer recipes={recipes}/>
         </Route>
+        {/* <Route path='/recipes_by_chef/<int:id>'>
+          <RecipesContainer />
+        </Route> */}
       </Switch>
       </div>
     </div> 
