@@ -49,12 +49,12 @@ function ReviewForm() {
           <Form>
             <form onSubmit={formik.handleSubmit}>
                 <label></label>
-                <input type='text' name='user' value={formik.values.name} placeholder="enter your name here..." onChange={formik.handleChange} />
+                <input type='text' name='user' value={formik.values.user} placeholder="enter your name here..." onChange={formik.handleChange} />
                 
                 <label className="chef">
                     <select
-                        name="rating"
-                        value={formik.values.workout}
+                        name="chef"
+                        value={formik.values.chef}
                         onChange={formik.handleChange}>
                         <option value="Diana">Diana</option>
                         <option value="Gordon">Gordon</option>
@@ -64,7 +64,7 @@ function ReviewForm() {
                     </select>
                 </label>
 
-                <label className="rating"></label>
+                <label className="rating">
                 <select
                     name="rating"
                     value={formik.values.rating}
@@ -75,10 +75,11 @@ function ReviewForm() {
                     <option value="♡♡">♡♡</option>
                     <option value="♡">♡</option> 
                 </select>
-                
+                </label>
             
                 <label>What did you think?</label>
-                <textarea type='text' rows='4' cols='36' name='description' value={formik.values.description} onChange={formik.handleChange} />
+                <textarea type='text' rows='4' cols='36' name='description' value={formik.values.text} onChange={formik.handleChange} />
+                
 
                 <button type="submit" className="submit">
                 Submit
@@ -92,12 +93,13 @@ export default ReviewForm
 
 
 const Form = styled.form`
-margin-top: 22px;
+margin-top: 50px;
 background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
 opacity: 0.7;
 background-repeat: no-repeat;
 background-size: 125%;
-height: 380px;
+height: 400px;
+width: 400px;
 background-color: rgba(255, 255, 255, 0.2);
 display: flex;
 flex-direction: column;
