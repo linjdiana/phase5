@@ -29,18 +29,18 @@ function Calendar() {
 export default Calendar;
 
 const CalendarContainer = styled.div`
+    justify-content: center;
   width: 400px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  font-family: 'Roboto', sans-serif;
 `;
 
 const StyledCalendar = styled(ReactCalendar)`
   & .react-calendar__tile--active {
     background-color: #007bff;
-    color: #fff;
+    // color: #fff;
   }
 
   & .react-calendar__tile--now {

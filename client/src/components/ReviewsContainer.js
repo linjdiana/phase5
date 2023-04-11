@@ -2,7 +2,7 @@ import ReviewCard from './ReviewCard'
 import ReviewForm from './ReviewForm'
 import styled from 'styled-components';
 
-function ReviewsContainer({ reviews }) {
+function ReviewsContainer({ reviews, chefs }) {
   const reviewItems = reviews.map(reviewObj => {
     return <ReviewCard key={reviewObj.id} reviewObj={reviewObj} />;
   });
