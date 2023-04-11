@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    min-height: 100vh;
+    min-height: 50vh;
     /* font-family: Hack, monospace; */
     font-family: 'Edu SA Beginner', cursive;
   }
@@ -29,7 +29,7 @@ body {
   }
   
 .navbar p {
-    font-size: 96px;
+    font-size: 80px;
     color: #ccc;
     text-transform: uppercase;
     font-weight: 600;
@@ -40,7 +40,7 @@ body {
 .navbar p::before {
     content: attr(data-item);
     transition: all 1s ease-in-out;
-    color: cyan;
+    color: rgb(213, 105, 213);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -54,7 +54,7 @@ body {
   }
   
 .navbar nav {
-    margin: 25px;
+    margin: 20px;
     background: #f9f9f9;
     padding: 16px;
   }
@@ -63,7 +63,8 @@ body {
     display: flex;
   }
 .navbar nav .menuItems li {
-    margin: 50px;
+    margin-left: 55px;
+    margin-right: 55px;
   }
 .navbar nav .menuItems li a {
     text-decoration: none;
@@ -101,7 +102,7 @@ body {
   }
 
   .home img {
-    display: block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;

@@ -64,7 +64,7 @@ if __name__ == '__main__':
         recipes.append(recipe9)
         recipe10 = Recipe(title='Gelato', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/gelato.jpeg', description='Gordon is probably one of the only people in San Francisco who has an extra freezer... just for gelato. Dessert is covered!', chef_id=2)
         recipes.append(recipe10)
-        recipe11 = Recipe(title='Spaghetti Carbonara', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/spaghetti.jpeg', description='Not the spaghetti you\'re expecing.', chef_id=2)
+        recipe11 = Recipe(title='Spaghetti Carbonara', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/spaghetti.jpeg', description='Not the spaghetti you\'re expecting.', chef_id=2)
         recipes.append(recipe11)
         recipe12 = Recipe(title='Gnocchi', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Potato-Gnocchi-in-Bacon-Spinach-Cream-Sauce.jpg', description='Gnocchi are small pieces of dough made with potatos, flour and eggs. They\'re chewy and absorb flavor so well, and is everybody\'s favorite!', chef_id=2)
         recipes.append(recipe12)

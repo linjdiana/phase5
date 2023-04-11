@@ -7,7 +7,7 @@ function RecipesContainer({ recipes }) {
     const [searchQuery, setSearchQuery] = useState("");
     const filteredRecipes = recipes.filter(recipe =>
         recipe?.title?.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        recipe?.chef?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        recipe?.chef?.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         recipe?.description?.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
@@ -21,6 +21,7 @@ function RecipesContainer({ recipes }) {
         <RecipeSearchBar setSearchQuery = {setSearchQuery} searchQuery={searchQuery}/>
         {/* <input >
             </input> */}
+            <br />
         <Container>
         <div className="recipespage">
             {recipeItems}
@@ -37,10 +38,17 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-    .recipespage {
-    display: flex;
+  .recipespage {
+    width: 90%;
+    display: fl ex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-y: auto; /* adds horizontal scroll */
+    max-height: 80vh;
+    background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   @media screen and (max-width: 767px) {
