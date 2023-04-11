@@ -31,6 +31,7 @@ function ReviewForm({addReview}) {
           res.json().then(review => {
             addReview(review)
             history.push(`/reviews`)
+            window.location.reload()
           })
         }
       })
