@@ -164,7 +164,7 @@ class Reviews(Resource):
         data=request.get_json()
         new_review = Review(
             user=data['user'],
-            chef=data['chef'],
+            chef_id=data['chef_id'],
             # chef_id=data['chef_id'],
             rating=data['rating'],
             # user_id=session['user_id'],
