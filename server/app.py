@@ -163,10 +163,11 @@ class Reviews(Resource):
     def post(self):
         data=request.get_json()
         new_review = Review(
-            user=data['name'],
+            user=data['user'],
+            chef=data['chef'],
+            # chef_id=data['chef_id'],
             rating=data['rating'],
             # user_id=session['user_id'],
-            # workout_id=data['workout_id'],
             text=data['text']
         )
         db.session.add(new_review)
@@ -179,6 +180,37 @@ class Reviews(Resource):
         return response
 api.add_resource(Reviews, '/reviews')
 
+class ReviewByID(Resource):
+    def patch(self, id):
+        review = Review.query.filter_by(id=id).first()
+        if not review:
+            raise NotFound
+
+        data = request.get_json()
+        review.rating = data.get('rating', review.rating)
+        review.text = data.get('text', review.text)
+
+        db.session.add(review)
+        db.session.commit()
+
+        production_dict = review.to_dict()
+        
+        response = make_response(
+            production_dict,
+            200
+        )
+        return response
+
+    def delete(self, id):
+        production = Review.query.filter_by(id=id).first()
+        if not production:
+            raise NotFound
+        db.session.delete(production)
+        db.session.commit()
+
+        response = make_response('', 204)
+        return response
+api.add_resource(ReviewByID, '/reviews/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
