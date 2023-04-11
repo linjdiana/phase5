@@ -7,7 +7,7 @@ function RecipesContainer({ recipes }) {
     const [searchQuery, setSearchQuery] = useState("");
     const filteredRecipes = recipes.filter(recipe =>
         recipe?.title?.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        recipe?.chef?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        recipe?.chef?.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         recipe?.description?.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
@@ -21,6 +21,7 @@ function RecipesContainer({ recipes }) {
         <RecipeSearchBar setSearchQuery = {setSearchQuery} searchQuery={searchQuery}/>
         {/* <input >
             </input> */}
+            <br />
         <Container>
         <div className="recipespage">
             {recipeItems}
