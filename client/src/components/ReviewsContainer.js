@@ -25,20 +25,25 @@ const Container = styled.div`
 `;
 
 const ReviewItems = styled.div`
-  width: 70%;
-  height: 250px;
+
+  width: 60%;
+  height: 400px;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: 135%;
 `;
 
 const ReviewsForm = styled.div`
-  width: 40%;
+  width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 250px;
+  height: 350px;
 `;
 

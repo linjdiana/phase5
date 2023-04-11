@@ -70,9 +70,11 @@ function ReviewForm({addReview}) {
                 </label>
             
                 <label>What did you think?</label>
-                <textarea type='text' rows='4' cols='40' name='description' value={formik.values.description} onChange={formik.handleChange} />
+                <textarea type='text' rows='3' cols='40' name='description' value={formik.values.description} onChange={formik.handleChange} />
 
-                <input type='submit' />
+                <button type="submit" className="submit">
+                Submit
+                </button>
             </Form> 
         </div>
     )
@@ -82,9 +84,12 @@ export default ReviewForm
 
 const Form = styled.form`
 margin-top: 22px;
-// background-image: url("https://img2.10bestmedia.com/Images/Photos/380636/GettyImages-611102194_54_990x660.jpg");
-height: 300px;
-opacity: 0.9;
+background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+opacity: 0.7;
+background-repeat: no-repeat;
+background-size: 125%;
+height: 380px;
+background-color: rgba(255, 255, 255, 0.2);
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -93,10 +98,6 @@ top: 0;
 padding: 1.5rem;
 box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.15);
 border-radius: 20px;
-font-weight: 590;
-font-size: 20px;
-    // .label {
-    //         width: 300px;   
-    // }
+font-size: 24px;
 }
 `

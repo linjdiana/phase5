@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    min-height: 100vh;
+    min-height: 50vh;
     /* font-family: Hack, monospace; */
     font-family: 'Edu SA Beginner', cursive;
   }
@@ -40,7 +40,7 @@ body {
 .navbar p::before {
     content: attr(data-item);
     transition: all 1s ease-in-out;
-    color: cyan;
+    color: rgb(213, 105, 213);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -63,7 +63,8 @@ body {
     display: flex;
   }
 .navbar nav .menuItems li {
-    margin: 50px auto;
+    margin-left: 55px;
+    margin-right: 55px;
   }
 .navbar nav .menuItems li a {
     text-decoration: none;

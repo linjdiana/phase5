@@ -39,11 +39,15 @@ align-items: center;
 
   .recipespage {
     width: 90%;
-    display: flex;
+    display: fl ex;
     flex-wrap: wrap;
     justify-content: center;
     overflow-y: auto; /* adds horizontal scroll */
     max-height: 80vh;
+    background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   @media screen and (max-width: 767px) {
