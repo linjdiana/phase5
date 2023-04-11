@@ -24,13 +24,13 @@ export default ChefCard;
 const Card = styled.div`
   position: relative;
   width: 100%;
-  height: 250px;
-  margin: 0 50px 50px;
+  height: 220px;
+  margin: 20px;
   perspective: 1000px;
 
   .content {
     position: absolute;
-    width: 1000px;
+    width: 650px;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;
@@ -62,7 +62,7 @@ const Card = styled.div`
       object-fit: cover;
     }
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #03446a;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -77,9 +77,9 @@ const Card = styled.div`
     color: #fff;
     transform: rotateY(180deg) rotate(180deg);
     p {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       text-align: center;
-      line-height: 1.5;
+      line-height: 1;
       padding: 0 20px;
     }
   }

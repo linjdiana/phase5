@@ -8,11 +8,9 @@ function ChefsContainer({ chefs }) {
 
     return (
         <Container>
-        <div className="chefspage">
-            <div className="chefcardcontainer">
+           
             {chefItems}
-            </div>
-        </div>
+        
         </Container>
     )
 }
@@ -20,10 +18,24 @@ function ChefsContainer({ chefs }) {
 export default ChefsContainer
 
 const Container = styled.div`
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
-opacity: 0.7;
-background-repeat: no-repeat;
-background-size: 150%;`
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: auto; /* adds horizontal scroll */
+    max-height: 80vh;
+    background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: 100%;}
+    
+    /* show only one card per row */
+    & > * {
+      flex-basis: 100%;
+    }
+  }
+`;

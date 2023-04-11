@@ -22,7 +22,7 @@ function NavBar({updateUser}) {
           <p data-item='FÜBER'>FÜBER</p>
 
           <section>
-            <div>bringing the chef to you</div>
+            <div><h3>bringing the chef to you</h3></div>
             <nav>
               <ul className="menuItems">
                 <li><NavLink exact to="/chefs">Chefs</NavLink></li>

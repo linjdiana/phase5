@@ -78,7 +78,7 @@ const Card = styled.div`
     }
 
     h2 {
-      font-size: 20px;
+      font-size: 25px;
       color: #03446a;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin-top: 10px;
@@ -93,7 +93,7 @@ const Card = styled.div`
     color: #fff;
     transform: rotateY(180deg) rotate(180deg);
     p {
-      font-size: 10px;
+      font-size: 18px;
       text-align: center;
       line-height: 1;
       padding: 0 20px;
