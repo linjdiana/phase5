@@ -165,7 +165,7 @@ class Reviews(Resource):
         new_review = Review(
             user=data['name'],
             rating=data['rating'],
-            user_id=session['user_id'],
+            # user_id=session['user_id'],
             # workout_id=data['workout_id'],
             text=data['text']
         )

@@ -1,8 +1,15 @@
 import ReviewCard from './ReviewCard'
 import ReviewForm from './ReviewForm'
-import styled from 'styled-components';
+import styled from 'styled-components'
+import React, {useState} from 'react'
 
 function ReviewsContainer({ reviews, chefs }) {
+  const [reviewList, setReviewList] = useState(reviews);
+
+  const addReview = (review) => {
+    setReviewList([...reviewList, review]);
+  }
+
   const reviewItems = reviews.map(reviewObj => {
     return <ReviewCard key={reviewObj.id} reviewObj={reviewObj} />;
   });
@@ -11,7 +18,7 @@ function ReviewsContainer({ reviews, chefs }) {
     <Container>
       <ReviewItems>{reviewItems}</ReviewItems>
       <ReviewsForm>
-        <ReviewForm />
+        <ReviewForm addReview={addReview} />
       </ReviewsForm>
     </Container>
   );
@@ -27,7 +34,7 @@ const Container = styled.div`
 const ReviewItems = styled.div`
 
   width: 60%;
-  height: 400px;
+  height: 425px;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
