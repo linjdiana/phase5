@@ -50,7 +50,7 @@ function Authentication({updateUser}) {
     return (
         <div className="cont">
           <h2 style={{color:'red'}}> {formik.errors.name}</h2>
-        {error&& <h2 style={{color:'red'}}> {error}</h2>}
+          {error&& <h2 style={{color:'red'}}> {error}</h2>}
         
             {isSignup ? (
               <form className="s--signup" onSubmit={formik.handleSubmit}>

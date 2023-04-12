@@ -4,24 +4,26 @@ import { useHistory } from 'react-router-dom'
 import { useFormik } from "formik"
 import * as yup from "yup"
 
-function ReviewForm() {
+function ReviewForm({addReview}) {
     const history = useHistory()
-    const [submittedReview, setSubmittedReview] = useState([])
-    const addReview = (review) => setSubmittedReview(current => [...current,review])
-    const formSchema = yup.object().shape({
-    user: yup.string().required("Must enter a name."),
-    rating: yup.number().positive(),
-    text: yup.string().required("Must enter text."),
-  })
+    // const [submittedReview, setSubmittedReview] = useState([])
+    // const addReview = (review) => setSubmittedReview(current => [...current,review])
+  //   const formSchema = yup.object().shape({
+  //   user: yup.string().required("Must enter a name."),
+  //   rating: yup.string(),
+  //   text: yup.string().required("Must enter text."),
+  // })
 
   const formik = useFormik({
     initialValues: {
       user:'',
+      chef_id: '',
       rating:'♡♡♡♡♡',
       text:'',
     },
-    validationSchema: formSchema,
+    // validationSchema: formSchema,
     onSubmit: (values) => {
+  
       fetch("/reviews", {
         method: "POST",
         headers: {
@@ -33,34 +35,32 @@ function ReviewForm() {
           res.json().then(review => {
             addReview(review)
             history.push(`/reviews`)
-            window.location.reload()
+            setTimeout(function(){
+              window.location.reload();
+            });
           })
         }
       })
     },
   })
 
-  // const handleNameChange = (event) => {
-  //   setName(event.target.value);
-  // };
-
     return (
         <div className="reviewform">
-          <Form>
+          {/* <Form> */}
             <form onSubmit={formik.handleSubmit}>
                 <label></label>
                 <input type='text' name='user' value={formik.values.user} placeholder="enter your name here..." onChange={formik.handleChange} />
                 
-                <label className="chef">
+                <label className="chef_id">
                     <select
-                        name="chef"
+                        name="chef_id"
                         value={formik.values.chef}
                         onChange={formik.handleChange}>
-                        <option value="Diana">Diana</option>
-                        <option value="Gordon">Gordon</option>
-                        <option value="Joon">Joon</option>
-                        <option value="Tony">Tony</option>
-                        <option value="Anika">Anika</option>
+                        <option value="1">Diana</option>
+                        <option value="2">Gordon</option>
+                        <option value="3">Joon</option>
+                        <option value="4">Tony</option>
+                        <option value="5">Anika</option>
                     </select>
                 </label>
 
@@ -78,14 +78,14 @@ function ReviewForm() {
                 </label>
             
                 <label>What did you think?</label>
-                <textarea type='text' rows='4' cols='36' name='description' value={formik.values.text} onChange={formik.handleChange} />
+                <textarea type='text' rows='4' cols='36' name='text' value={formik.values.text} onChange={formik.handleChange} />
                 
 
                 <button type="submit" className="submit">
                 Submit
                 </button>
             </form>
-            </Form> 
+            {/* </Form>  */}
         </div>
     )
 }

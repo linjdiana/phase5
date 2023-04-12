@@ -44,9 +44,3 @@ const SearchInput = styled.input`
         text-align: left;
     }
 `;
-
-// const afterSearch = songs.filter((song)=>
-//     song.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-//     song.artist.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//     song.genre.toLowerCase().includes(searchQuery.toLowerCase())
-//   );
