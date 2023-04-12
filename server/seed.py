@@ -9,6 +9,8 @@ if __name__ == '__main__':
 
     with app.app_context():
         Chef.query.delete()
+        Recipe.query.delete()
+        Review.query.delete()
 
         users = []
         user1 = User(name='Roberto', email='CEO@bobsburgers.com', password_hash=generate_password_hash('hello1'))
@@ -44,7 +46,7 @@ if __name__ == '__main__':
         db.session.commit()
 
         recipes = []
-        recipe1 = Recipe(title='Beef Noodle Soup', image='', description='Diana sources hand made soup noodles from Clement street (the real Chinatown of San Francisco) and slow cooks the beef for eight hours before serving it with flavorful broth. With an extra hour to spare, you can learn to make hand made noodles with her!', chef_id=1)
+        recipe1 = Recipe(title='Beef Noodle Soup', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/beef%20noodle%20soup.jpeg', description='Diana sources hand made soup noodles from Clement street (the real Chinatown of San Francisco) and slow cooks the beef for eight hours before serving it with flavorful broth. With an extra hour to spare, you can learn to make hand made noodles with her!', chef_id=1)
         recipes.append(recipe1)
         recipe2 = Recipe(title='Peking Duck', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Peking-Duck.jpeg', description='Special recipe that needs to be ordered 48 hours in advance, but this crisp duck wrapped in warm buns is a Chinese specialty that will not disappoint!', chef_id=1)
         recipes.append(recipe2)
@@ -92,7 +94,7 @@ if __name__ == '__main__':
         recipes.append(recipe23)
         recipe24 = Recipe(title='Kalakand (Milk Cake)', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/kalakand.webp', description='A popular Indian sweet made with ricotta cheese, sugar, dry milk powder, ghee and spices.', chef_id=5)
         recipes.append(recipe24)
-        recipe25 = Recipe(title='Dim Sum Brunch', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg', description='On weekends, Diana will make you an assortment of Chinese pastries for the special Chinese "bruch".', chef_id=1)
+        recipe25 = Recipe(title='Dim Sum Brunch', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Dim-sum-spread-1200x854.jpg', description='On weekends, Diana will make you an assortment of Chinese pastries for the special Chinese "bruch".', chef_id=1)
         recipes.append(recipe25)
         recipe26 = Recipe(title='You Tiao', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/youtiao.jpeg', description='These savory Chinese doughnuts are a staple in China! Diana hasn\'t been able to find the perfect place that sells them, so she came up with a recipe herself.', chef_id=1)
         recipes.append(recipe26)
@@ -110,20 +112,23 @@ if __name__ == '__main__':
         recipes.append(recipe32)
         recipe33 = Recipe(title='Chalupas', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/chalupa.webp', description='Chalupa means boat in Spanish, and this is the yummiest boat of meat you will ever eat.', chef_id=4)
         recipes.append(recipe33)
-        recipe34 = Recipe(title='Pulled Pork Sliders', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg', description='Leftovers for lunch anybody?', chef_id=4)
+        recipe34 = Recipe(title='Pulled Pork Sliders', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Homemade-Pulled-Pork-Brisket-Sandwich.jpg', description='Leftovers for lunch anybody?', chef_id=4)
         recipes.append(recipe34)
         recipe35 = Recipe(title='Hot pot', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/hot%20pot.jpeg', description='Seasonal winter event. Have you ever sat around a table with your best friends and basically making your own soup with your favorite ingredients?', chef_id=1)
         recipes.append(recipe35)
-        recipe36 = Recipe(title='Okonomiyaki', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg', description='Flavorful Japanese cabbage pancakes. I know, I know -- you can barely taste the cabbage! The tonkatsu sauce and the nori on top make all the flavoring.', chef_id=3)
+        recipe36 = Recipe(title='Okonomiyaki', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Okonomiyaki.jpeg', description='Flavorful Japanese cabbage pancakes. I know, I know -- you can barely taste the cabbage! The tonkatsu sauce and the nori on top make all the flavoring.', chef_id=3)
         recipes.append(recipe36)
-        recipe37 = Recipe(title='Tonkatsu Ramen', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg', description='A classic that even the pickiest of eaters will love -- ramen with pork broth.', chef_id=3)
+        recipe37 = Recipe(title='Tonkatsu Ramen', image='https://www.foodandwine.com/thmb/KMjGvI2fQ_VBAGUn9IrRDYNSKCo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Tonkotsu-Ramen-FT-BLOG1122-8fe6c12d609a4fd4ab246bea3aae140e.jpg', description='A classic that even the pickiest of eaters will love -- ramen with pork broth.', chef_id=3)
         recipes.append(recipe37)
         recipe38 = Recipe(title='Shabu shabu', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Shabu-Shabu-I-2.jpg', description='Due to the demand of Joon\'s evening omakases, the shabu shabu experiences are only served during lunch.', chef_id=3)
         recipes.append(recipe38)
-        recipe39 = Recipe(title='Do Nothing Cake', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg', description='Well, you do nothing. While you\'re finishing up the last savory dish of the night, the cake will be baking in the oven, waiting for you to have the first bite.', chef_id=4)
+        recipe39 = Recipe(title='Do Nothing Cake', image='https://thesouthernladycooks.com/wp-content/uploads/2020/12/DoNothingCakeWebsiteNew.png', description='Well, you do nothing. While you\'re finishing up the last savory dish of the night, the cake will be baking in the oven, waiting for you to have the first bite.', chef_id=4)
         recipes.append(recipe39)
-        recipe40 = Recipe(title='Butter Chicken', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg', description='Tender and juicy chicken made in a deliciously spiced yogurt marinade. This is the perfect introductory dish for your friends who have never tried Indian food before!', chef_id=5)
+        recipe40 = Recipe(title='Butter Chicken', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Butter-Chicken-IMAGE-27.jpg', description='Tender and juicy chicken made in a deliciously spiced yogurt marinade. This is the perfect introductory dish for your friends who have never tried Indian food before!', chef_id=5)
         recipes.append(recipe40)
+        recipe41 = Recipe(title='Farmers Market Produce', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg', description='Anika will always make sure you end the meal with a beautiful assortment of the fresh goods she picked up from the farmer\'s market, or sometimes even her own home garden!', chef_id=5)
+        recipes.append(recipe41)
+        
         db.session.add_all(recipes)
         db.session.commit()
 
