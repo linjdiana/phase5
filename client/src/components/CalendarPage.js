@@ -1,4 +1,4 @@
-import { Calendar } from 'react-big-calendar';
+import {Calendar} from 'react-big-calendar';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { format, parse, startOfWeek, getDay } from "date-fns";
@@ -9,7 +9,7 @@ import enUS from 'date-fns/locale/en-US';
 import DatePicker from "react-datepicker";
 
 const locales = {
-  "en-US": enUS
+  "en-US": require('date-fns/locale/en-US')
 };
 
 const localizer = dateFnsLocalizer({
@@ -56,7 +56,7 @@ function CalendarPage() {
     <CalendarContainer>
       <h3>Which chef would you like to book?</h3>
              <div> 
-       <input type="text" placeholder="Add Title" style={{ width: 200, marginRight: "10px"}} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
+       {/* <input type="text" placeholder="Add Title" style={{ width: 200, marginRight: "10px"}} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} /> */}
         <DatePicker placeholderText="Start Date" style={{marginRight: "10px"}}
         selected={newEvent.start} onChange={(start => setNewEvent({...newEvent, start}))} />
         <DatePicker placeholderText="End Date" style={{marginRight: "10px"}}
@@ -73,8 +73,8 @@ function CalendarPage() {
         // prev2Label={null}
         // next2Label={null}
         // showNeighboringMonth={false}
-        // localizer={localizer}
-        // startAccessor="start" endAccessor="end" style={{height: 500, margin: "20px"}}
+        localizer={localizer}
+        startAccessor="start" endAccessor="end" style={{height: 500, margin: "35px"}}
       />
     </CalendarContainer>
   );
@@ -83,27 +83,30 @@ function CalendarPage() {
 export default CalendarPage;
 
 const CalendarContainer = styled.div`
+  justify-content: center;
     margin: auto;
     text-align: center;
     margin-top: 25px;
-    width: 1200px;
-    height: 1000px;
+    width: 1080px;
+    height: 700px;
     border-radius: 4px;
     border: 1px solid #ccc;
     background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     backdrop-filter: blur(5px);
-    background-size: 100%;
+    background-size: 115%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
+    font-size: 22px;
     color: #CC0099;
 `;
 
 const StyledCalendar = styled(Calendar)`
-  font-size: 18px;
-  width: 800px;
-  height: 1000px;
-  justify-content: center;
   margin: auto;
+  text-align: center;
+  font-size: 20px;
+  width: 1000px;
+  height: 800px;
+  justify-content: center;
+  
 }
   & .react-calendar__tile--active {
     background-color: #007bff;
@@ -116,19 +119,16 @@ const StyledCalendar = styled(Calendar)`
     font-size: 25px;
     color: #CC0099;
   }
-
   & .react-calendar__tile--now:enabled:hover {
     background-color: #007bff;
     color: #CC0099;
     font-size: 25px;
   }
-
   & .react-calendar__tile--active:enabled:hover {
     background-color: #007bff;
     color: #CC0099;
     font-size: 25px;
   }
-
   & .react-calendar__tile--hasActive:enabled:hover {
     background-color: #007bff;
     color: #CC0099;
