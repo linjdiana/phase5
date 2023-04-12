@@ -9,7 +9,6 @@ import CalendarPage from './components/CalendarPage'
 import ReviewsContainer from './components/ReviewsContainer'
 import RecipesContainer from './components/RecipesContainer'
 
-
 function App() {
   const [user, setUser] = useState(null);
   const [chefs, setChefs] = useState([]);
