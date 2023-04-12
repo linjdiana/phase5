@@ -5,7 +5,7 @@ import Home from './components/Home.js'
 import Authentication from './components/Authentication.js'
 import NavBar from './components/NavBar.js'
 import ChefsContainer from './components/ChefsContainer'
-import Calendar from './components/Calendar'
+import CalendarPage from './components/CalendarPage'
 import ReviewsContainer from './components/ReviewsContainer'
 import RecipesContainer from './components/RecipesContainer'
 
@@ -14,7 +14,9 @@ function App() {
   const [user, setUser] = useState(null);
   const [chefs, setChefs] = useState([]);
   const [recipes, setRecipes] = useState([]);
-  const [ reviews, setReviews ] = useState([])
+  const [reviews, setReviews ] = useState([])
+
+  const addReview = (review) => setReviews(current => [...current,review])
 
   useEffect(() => {
     fetch("/authorized")
@@ -58,6 +60,7 @@ function App() {
       <Authentication updateUser={updateUser}/>
     </>
   )
+  
 
   return (
     <div className="App">
@@ -74,17 +77,17 @@ function App() {
           <ChefsContainer chefs={chefs}/>
         </Route>
         <Route path="/calendar" >
-          <Calendar/>
+          <CalendarPage />
         </Route>
         <Route path='/reviews'>
-          <ReviewsContainer reviews={reviews}/>
+          <ReviewsContainer reviews={reviews} addReview={addReview}/>
         </Route>
         <Route path='/recipes'>
           <RecipesContainer recipes={recipes}/>
         </Route>
-        {/* <Route path='/recipes_by_chef/<int:id>'>
+        <Route path='/recipes_by_chef/<int:id>'>
           <RecipesContainer />
-        </Route> */}
+        </Route>
       </Switch>
       </div>
     </div> 

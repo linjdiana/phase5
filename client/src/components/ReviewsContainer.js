@@ -3,13 +3,8 @@ import ReviewForm from './ReviewForm'
 import styled from 'styled-components'
 import React, {useState} from 'react'
 
-function ReviewsContainer({ reviews, chefs }) {
-  const [reviewList, setReviewList] = useState(reviews);
-
-  const addReview = (review) => {
-    setReviewList([...reviewList, review]);
-  }
-
+function ReviewsContainer({ reviews }) {
+  
   const reviewItems = reviews.map(reviewObj => {
     return <ReviewCard key={reviewObj.id} reviewObj={reviewObj} />;
   });
@@ -18,7 +13,7 @@ function ReviewsContainer({ reviews, chefs }) {
     <Container>
       <ReviewItems>{reviewItems}</ReviewItems>
       <ReviewsForm>
-        <ReviewForm addReview={addReview} />
+        <ReviewForm />
       </ReviewsForm>
     </Container>
   );
