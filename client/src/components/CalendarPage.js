@@ -91,9 +91,9 @@ const CalendarContainer = styled.div`
     height: 700px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+    // background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     backdrop-filter: blur(5px);
-    background-size: 115%;
+    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-size: 22px;
     color: #CC0099;
@@ -106,7 +106,7 @@ const StyledCalendar = styled(Calendar)`
   width: 1000px;
   height: 800px;
   justify-content: center;
-  
+  border-radius: 25px;
 }
   & .react-calendar__tile--active {
     background-color: #007bff;

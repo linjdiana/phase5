@@ -97,7 +97,7 @@ margin-top: 50px;
 background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
 opacity: 0.7;
 background-repeat: no-repeat;
-background-size: 125%;
+background-size: 80%;
 height: 400px;
 width: 400px;
 background-color: rgba(255, 255, 255, 0.2);
