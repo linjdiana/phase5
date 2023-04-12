@@ -7,10 +7,14 @@ from config import db, bcrypt
 # Models go here!
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
+
+    # serialize_rules = ('-_password_hash')
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
-    email = db.Column(db.String, unique=True, nullable=False)
+    name = db.Column(db.String)
+    email = db.Column(db.String)
     _password_hash = db.Column(db.String)
+
+    review = db.relationship('Review', back_populates='users')
 
     @hybrid_property 
     def password_hash(self):
@@ -27,32 +31,41 @@ class User(db.Model, SerializerMixin):
 class Chef(db.Model, SerializerMixin):
     __tablename__ = 'chefs'
 
-    # serialize_rules = ('-recipe')
+    serialize_rules = ('-review', '-recipes')
     id = db.Column(db.Integer, primary_key=True)
 
     name=db.Column(db.String)
     image=db.Column(db.String)
     bio=db.Column(db.String)
-    # recipes = db.relationship('Recipe', backref='chef')
-    # reviews = db.relationship('Review', backref='chef')
 
+    recipes = db.relationship('Recipe', back_populates='chef')
+    review = db.relationship('Review', back_populates='chef')
 
 class Recipe(db.Model, SerializerMixin):
     __tablename__ = 'recipes'
+
+    serialize_rules = ('-chef.bio', '-chef.id', '-chef.image')
     id = db.Column(db.Integer, primary_key=True)
-    # serialize_rules = ('-chef.bio', '-chef.image')
     title=db.Column(db.String)
     image=db.Column(db.String)
     description=db.Column(db.String)
     # chef_id = db.Column(db.Integer)
     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
 
+    chef = db.relationship('Chef', back_populates='recipes')
+
 class Review(db.Model, SerializerMixin):
     __tablename__ = 'reviews'
     id = db.Column(db.Integer, primary_key=True)
+
+    serialize_rules =('-chefs', '-users', '-chef.id', '-user_id', 
+                      )
 
     user = db.Column(db.String)
     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     rating = db.Column(db.Integer)
     text = db.Column(db.String)
+
+    chef = db.relationship('Chef', back_populates='review')
+    users = db.relationship('User', back_populates='review') 

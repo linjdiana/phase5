@@ -1,4 +1,4 @@
-import {Calendar} from 'react-big-calendar';
+import { Calendar } from 'react-big-calendar';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { format, parse, startOfWeek, getDay } from "date-fns";
@@ -65,16 +65,16 @@ function CalendarPage() {
       </div>
       <StyledCalendar
         events = {allEvents}
-        onChange={onChange}
-        value={value}
-        minDate={minDate}
-        maxDate={maxDate}
-        calendarType="US"
-        prev2Label={null}
-        next2Label={null}
-        showNeighboringMonth={false}
-        localizer={localizer}
-        startAccessor="start" endAccessor="end" style={{height: 500, margin: "20px"}}
+        // onChange={onChange}
+        // value={value}
+        // minDate={minDate}
+        // maxDate={maxDate}
+        // calendarType="US"
+        // prev2Label={null}
+        // next2Label={null}
+        // showNeighboringMonth={false}
+        // localizer={localizer}
+        // startAccessor="start" endAccessor="end" style={{height: 500, margin: "20px"}}
       />
     </CalendarContainer>
   );
@@ -83,17 +83,16 @@ function CalendarPage() {
 export default CalendarPage;
 
 const CalendarContainer = styled.div`
-    justify-content: center;
     margin: auto;
     text-align: center;
     margin-top: 25px;
-    width: 1000px;
-    height: 800px;
+    width: 1200px;
+    height: 1000px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    background-image: url("https://img.freepik.com/premium-photo/lavender-flowers-light-nature-with-blur-background_48237-28.jpg?w=1480");
+    background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     backdrop-filter: blur(5px);
-    background-size: 200%;
+    background-size: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-size: 20px;
     color: #CC0099;
@@ -104,6 +103,7 @@ const StyledCalendar = styled(Calendar)`
   width: 800px;
   height: 1000px;
   justify-content: center;
+  margin: auto;
 }
   & .react-calendar__tile--active {
     background-color: #007bff;
@@ -111,29 +111,29 @@ const StyledCalendar = styled(Calendar)`
     font-size: 25px;
   }
   
-  // & .react-calendar__tile--now {
-  //   border: 1px solid #007bff;
-  //   font-size: 25px;
-  //   color: #CC0099;
-  // }
+  & .react-calendar__tile--now {
+    border: 1px solid #007bff;
+    font-size: 25px;
+    color: #CC0099;
+  }
 
-  // & .react-calendar__tile--now:enabled:hover {
-  //   background-color: #007bff;
-  //   color: #CC0099;
-  //   font-size: 25px;
-  // }
+  & .react-calendar__tile--now:enabled:hover {
+    background-color: #007bff;
+    color: #CC0099;
+    font-size: 25px;
+  }
 
-  // & .react-calendar__tile--active:enabled:hover {
-  //   background-color: #007bff;
-  //   color: #CC0099;
-  //   font-size: 25px;
-  // }
+  & .react-calendar__tile--active:enabled:hover {
+    background-color: #007bff;
+    color: #CC0099;
+    font-size: 25px;
+  }
 
-  // & .react-calendar__tile--hasActive:enabled:hover {
-  //   background-color: #007bff;
-  //   color: #CC0099;
-  //   font-size: 25px;
-  // }
+  & .react-calendar__tile--hasActive:enabled:hover {
+    background-color: #007bff;
+    color: #CC0099;
+    font-size: 25px;
+  }
 };`
 
 // import format from "date-fns/format";
