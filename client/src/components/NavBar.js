@@ -26,8 +26,8 @@ function NavBar({updateUser}) {
             <nav>
               <ul className="menuItems">
                 <li><NavLink exact to="/chefs">Chefs</NavLink></li>
-                <li><NavLink exact to="/calendar">Calendar</NavLink></li>
                 <li><NavLink exact to="/recipes">Recipes</NavLink></li>
+                <li><NavLink exact to="/calendar">Calendar</NavLink></li>
                 <li><NavLink exact to="/reviews">Reviews</NavLink></li>
                 <li><NavLink exact to="/contact us">Contact Us</NavLink></li>
                 <li onClick={handleLogout}><NavLink exact to="/logout">Logout</NavLink></li>

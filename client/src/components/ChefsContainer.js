@@ -30,7 +30,7 @@ const Container = styled.div`
     max-height: 80vh;
     // background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     // background-color: white;
-    opacity: 0.7;
+    opacity: 0.85;
     background-repeat: no-repeat;
     background-size: 100%;}
     
