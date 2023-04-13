@@ -54,7 +54,7 @@ function CalendarPage() {
 
   return (
     <CalendarContainer>
-      <h2>Which chef would you like to book?</h2>
+      <h1>Calendar</h1>
       {/* <label className="chef_id"> */}
       <select
                         name="chef_id">
