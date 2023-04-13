@@ -54,15 +54,27 @@ function CalendarPage() {
 
   return (
     <CalendarContainer>
-      <h3>Which chef would you like to book?</h3>
+      <h2>Which chef would you like to book?</h2>
+      {/* <label className="chef_id"> */}
+      <select
+                        name="chef_id">
+                        {/* // value={formik.values.chef}
+                        // onChange={formik.handleChange} */}
+                        <option value="1">Diana</option>
+                        <option value="2">Gordon</option>
+                        <option value="3">Joon</option>
+                        <option value="4">Tony</option>
+                        <option value="5">Anika</option>
+                    </select>
+                {/* </label> */}
              <div> 
        {/* <input type="text" placeholder="Add Title" style={{ width: 200, marginRight: "10px"}} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} /> */}
         <DatePicker placeholderText="Start Date" style={{marginRight: "10px"}}
         selected={newEvent.start} onChange={(start => setNewEvent({...newEvent, start}))} />
         <DatePicker placeholderText="End Date" style={{marginRight: "10px"}}
         selected={newEvent.end} onChange={(end => setNewEvent({...newEvent, end}))} />
-        <button style={{marginTop: "10px"}} onClick={handleAddEvent}>Add Event</button>
-      </div>
+        <button style={{marginTop: "10px", color: "purple"}} onClick={handleAddEvent}>Add Event</button>
+                </div>
       <StyledCalendar
         events = {allEvents}
         // onChange={onChange}
@@ -88,7 +100,7 @@ const CalendarContainer = styled.div`
     text-align: center;
     margin-top: 25px;
     width: 1080px;
-    height: 700px;
+    height: 750px;
     border-radius: 4px;
     border: 1px solid #ccc;
     // background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");

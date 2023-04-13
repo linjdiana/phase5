@@ -26,7 +26,7 @@ const Card = styled.div`
   width: 100%;
   height: 220px;
   margin: 20px;
-  perspective: 1000px;
+  // perspective: 1000px;
 
   .content {
     // position: absolute;

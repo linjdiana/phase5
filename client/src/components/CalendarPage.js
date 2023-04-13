@@ -26,15 +26,16 @@ function CalendarPage({ chefs }) {
 export default CalendarPage
 
 const CalPage = styled.div `
-color: white;
+color: #CC0099;
 margin: 0;
+opacity: 0.95;
 
 .chefcard {
     margin: 0 auto;
-    display: flex;
+    // display: flex;
     // justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 1000;
+    margin-left: 280px;
 }
 `;
