@@ -58,8 +58,7 @@ class Review(db.Model, SerializerMixin):
     __tablename__ = 'reviews'
     id = db.Column(db.Integer, primary_key=True)
 
-    serialize_rules =('-chefs', '-users', '-chef.id', '-user_id', 
-                      )
+    serialize_rules =('-chefs', '-users', '-chef.id', '-user_id',)
 
     user = db.Column(db.String)
     chef_id = db.Column(db.Integer, db.ForeignKey('chefs.id'))

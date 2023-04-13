@@ -92,7 +92,7 @@ function ReviewForm({addReview}) {
 export default ReviewForm
 
 
-const Form = styled.form`
+styled.form`
 margin-top: 50px;
 background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
 opacity: 0.7;
