@@ -29,7 +29,7 @@ const Card = styled.div`
   perspective: 1000px;
 
   .content {
-    position: absolute;
+    // position: absolute;
     width: 650px;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
