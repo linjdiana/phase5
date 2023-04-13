@@ -35,7 +35,7 @@ const ReviewItems = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+  // background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     opacity: 0.9;
     background-repeat: no-repeat;
     background-size: 135%;

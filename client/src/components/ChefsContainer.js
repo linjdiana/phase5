@@ -28,8 +28,9 @@ const Container = styled.div`
     justify-content: center;
     overflow-y: auto; /* adds horizontal scroll */
     max-height: 80vh;
-    background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
-    opacity: 0.9;
+    // background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
+    // background-color: white;
+    opacity: 0.7;
     background-repeat: no-repeat;
     background-size: 100%;}
     

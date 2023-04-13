@@ -26,10 +26,10 @@ const Card = styled.div`
   width: 100%;
   height: 220px;
   margin: 20px;
-  perspective: 1000px;
+  // perspective: 1000px;
 
   .content {
-    position: absolute;
+    // position: absolute;
     width: 650px;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);

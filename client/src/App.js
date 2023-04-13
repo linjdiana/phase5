@@ -76,7 +76,7 @@ function App() {
           <ChefsContainer chefs={chefs}/>
         </Route>
         <Route path="/calendar" >
-          <CalendarPage />
+          <CalendarPage chefs={chefs}/>
         </Route>
         <Route path='/reviews'>
           <ReviewsContainer reviews={reviews} addReview={addReview}/>
