@@ -1,4 +1,4 @@
-# Phase 5 FlatIron School, Capstone Project
+# Phase 4 Full-Stack Application Project 
 Diana Lin
 
 ## Introduction
@@ -9,19 +9,19 @@ Please see video demo here:
 This website was created using a React front end along with a Flask backend that utilizes SQLAlchemy for the databases.
 
 ## How to access site 
-cd server (Flask backend)
-pipenv install
-python app.py
+cd server (Flask backend)<br/>
+pipenv install<br/>
+python app.py<br/><br/>
 
-cd ..
-cd client (React frontend)
-npm install
-npm start
+cd ..<br/>
+cd client (React frontend)<br/>
+npm install<br/>
+npm start<br/>
 
 ## Project Navigation
 In order to access the site, you first need to sign up for an account, then log in.
 You'll reach the home page which is a brief introduction to the website! 
-
+<br/><br/>
 Here are the routes: 
 /chefs an introduction to the five chefs <br/>
 /calendar want to make a booking? take a look at our calendar. we don't have a booking functionality yet but feel free to fill out to "contact us" form. If you're indecisive, you can refresh the page and a chef will randomly be generated for you! <br/>
