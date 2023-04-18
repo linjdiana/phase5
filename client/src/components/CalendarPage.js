@@ -46,7 +46,7 @@ opacity: 0.95;
 }
 
 .h1 {
-    font-size: 36px;
+    font-size: 54px;
     color: grey;
 }
 
