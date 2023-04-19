@@ -8,33 +8,32 @@ import {
   DialogTitle
 } from "@material-ui/core";
 import Card from "./card";
-import styled from 'styled-components';
 import ContactForm from './ContactForm'
 
 const uniqueElementsArray = [
   {
-    type: "Gnocchi",
-    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Potato-Gnocchi-in-Bacon-Spinach-Cream-Sauce.jpg"
+    type: "Banana Bread",
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/sour-cream-banana-bread-8.webp"
   },
   {
     type: "Wonton Soup",
     image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/wonton%20soup.jpeg"
   },
   {
-    type: "BBQ",
-    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/BBQ.jpeg"
+    type: "Beef Noodle Soup",
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/beef%20noodle%20soup.jpeg"
   },
   {
-    type: "Fruit",
-    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg"
+    type: "Cookies",
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/JT-Chocolate-Chip-Cookies-master768.jpg"
   },
   {
     type: "Shabu Shabu",
     image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Shabu-Shabu-I-2.jpg"
   },
   {
-    type: "Dim Sum",
-    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Dim-sum-spread-1200x854.jpg"
+    type: "Taiyaki",
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/taiyaki.webp"
   }
 ];
 
@@ -145,9 +144,9 @@ function ContactPage() {
     <>
     <div className="contactpage">
       <header>
-        <h3>Play the Flip card game</h3>
+        <h3>Hungry?</h3>
         <div>
-          Select two cards with same content consequtively to make them vanish
+          Select two cards with same food items to make them disappear
         </div>
       </header>
       <div className="container">
@@ -185,11 +184,6 @@ function ContactPage() {
       <Dialog
         open={showModal}
         disableBackdropClick
-        // onClose={(event, reason) => {
-        //     if (reason !== 'backdropClick') {
-        //         setOpen(false)
-        //     }
-        // }}
         disableEscapeKeyDown
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -209,8 +203,16 @@ function ContactPage() {
           </Button>
         </DialogActions>
       </Dialog>
+      <div className="emails">
+      
+        <a href="mailto:diana@füber.com">diana@füber.com</a><br />
+        <a href="mailto:gordon@füber.com">gordon@füber.com</a><br />
+        <a href="mailto:tony@füber.com">tony@füber.com</a><br />
+        <a href="mailto:joon@füber.com">joon@füber.com</a><br />
+        <a href="mailto:anika@füber.com">anika@füber.com</a><br />
+        </div>
     </div>
-    <ContactForm />
+    {/* <ContactForm /> */}
     </>
   );
 }

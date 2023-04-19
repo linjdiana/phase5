@@ -144,10 +144,11 @@ body {
     width: 100%;
     text-align: center;
     margin-bottom: 8px;
+    font-size: 22px;
   }
   
   .contactpage header > div {
-    font-size: 15px;
+    font-size: 20px;
     width: 324px;
     text-align: center;
     margin: 0 auto;
@@ -159,6 +160,7 @@ body {
     margin: 0 auto;
     padding: 10px 4px;
     margin-top: 10px;
+    font-size: 20px;
   }
   
   .contactpage footer .score {
@@ -186,8 +188,8 @@ body {
     align-items: stretch;
     gap: 1rem;
     margin: 0 auto;
-    width: 360px;
-    height: 300px;
+    width: 720px;
+    height: 600px;
     max-width: 720px;
   }
 
@@ -225,6 +227,10 @@ body {
   
   .card.is-inactive {
     opacity: 0;
+  }
+
+  .emails {
+    font-size: 26px;
   }
   
   
