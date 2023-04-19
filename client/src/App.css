@@ -232,5 +232,27 @@ body {
   .emails {
     font-size: 26px;
   }
+
+  .recipeschef {
+    width: 100px;
+    height: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    border-radius: 50px;
+    text-align: center;
+    color: rgb(102, 96, 96);
+    border-color: rgb(190, 184, 184);
+  }
+
+  .calendardropdown {
+    width: 100px;
+    height: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    border-radius: 50px;
+    text-align: center;
+    color: rgb(102, 96, 96);
+    border-color: rgb(190, 184, 184);
+  }
   
   

@@ -8,9 +8,7 @@ function ChefsContainer({ chefs }) {
 
     return (
         <Container>
-           
             {chefItems}
-        
         </Container>
     )
 }
