@@ -22,7 +22,7 @@ function ReviewForm({addReview}) {
       text:'',
     },
     // validationSchema: formSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
   
       fetch("/reviews", {
         method: "POST",
@@ -38,6 +38,7 @@ function ReviewForm({addReview}) {
             setTimeout(function(){
               window.location.reload();
             });
+            resetForm();
           })
         }
       })

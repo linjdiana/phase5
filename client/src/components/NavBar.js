@@ -29,7 +29,7 @@ function NavBar({updateUser}) {
                 <li><NavLink exact to="/recipes">Recipes</NavLink></li>
                 <li><NavLink exact to="/calendar">Calendar</NavLink></li>
                 <li><NavLink exact to="/reviews">Reviews</NavLink></li>
-                <li><NavLink exact to="/contact us">Contact</NavLink></li>
+                <li><NavLink exact to="/contact">Contact</NavLink></li>
                 <li onClick={handleLogout}><NavLink exact to="/logout">Logout</NavLink></li>
               </ul>
             </nav>

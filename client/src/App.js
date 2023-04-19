@@ -8,12 +8,14 @@ import ChefsContainer from './components/ChefsContainer'
 import CalendarPage from './components/CalendarPage'
 import ReviewsContainer from './components/ReviewsContainer'
 import RecipesContainer from './components/RecipesContainer'
+import ContactPage from './components/ContactPage'
 
 function App() {
   const [user, setUser] = useState(null);
   const [chefs, setChefs] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [reviews, setReviews ] = useState([])
+  const [data, setData] = useState(null);
 
   const addReview = (review) => setReviews(current => [...current,review])
 
@@ -52,6 +54,13 @@ function App() {
     })
   }, [])
 
+  //   useEffect(() => {
+  //   fetch("/contact")
+  //     .then((response) => response.json())
+  //     .then((data) => setData(data))
+  //     .catch((error) => console.error(error));
+  // }, []);
+
   const updateUser = (user) => setUser(user)
   if(!user) return (
     <>
@@ -83,6 +92,9 @@ function App() {
         </Route>
         <Route path='/recipes'>
           <RecipesContainer recipes={recipes}/>
+        </Route>
+        <Route path='/contact'>
+          <ContactPage />
         </Route>
         <Route path='/recipes_by_chef/<int:id>'>
           <RecipesContainer />

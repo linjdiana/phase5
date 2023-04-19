@@ -7,14 +7,6 @@ from functools import wraps
 
 api = Api(app)
 
-# def authenticated(fn):
-#     @wraps(fn)
-#     def wrapper(*args, **kwargs):
-#         if 'user_id' not in session:
-#             abort(401, 'Unauthorized')
-#         return fn(*args, **kwargs)
-#     return wrapper
-
 class Users(Resource):
     def get(self):
         user = User.query.filter_by(id=session['user_id']).first()

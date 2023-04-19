@@ -108,7 +108,7 @@ if __name__ == '__main__':
         recipes.append(recipe30)
         recipe31 = Recipe(title='Yorkshire Pudding', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Yorkshirepudding3.jpg', description='A popover made of baked unsweetened egg batter, typically eaten with roast beef and gravy. Gordon has spent way too much time in London, and now you can have a taste of London without even leaving your home!', chef_id=2)
         recipes.append(recipe31)
-        recipe32 = Recipe(title='Chocolate Ice Cream Cake', image='https://d33wubrfki0l68.cloudfront.net/8ed37ff261ce617027bee44f999bc049eea1c2c3/03f89/images/uploads/2018_08_15_chocolate_oreo_cookie_ice_cream_cake_2.jpg', description='Just an example, but you can change the cake to any flavor you\'d like!', chef_id=1)
+        recipe32 = Recipe(title='Chocolate Cake', image='https://d33wubrfki0l68.cloudfront.net/8ed37ff261ce617027bee44f999bc049eea1c2c3/03f89/images/uploads/2018_08_15_chocolate_oreo_cookie_ice_cream_cake_2.jpg', description='Just an example, but you can change the cake to any flavor you\'d like!', chef_id=1)
         recipes.append(recipe32)
         recipe33 = Recipe(title='Chalupas', image='https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/chalupa.webp', description='Chalupa means boat in Spanish, and this is the yummiest boat of meat you will ever eat.', chef_id=4)
         recipes.append(recipe33)
