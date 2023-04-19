@@ -15,6 +15,7 @@ function App() {
   const [chefs, setChefs] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [reviews, setReviews ] = useState([])
+  const [data, setData] = useState(null);
 
   const addReview = (review) => setReviews(current => [...current,review])
 
@@ -52,6 +53,13 @@ function App() {
       setReviews(reviewData)
     })
   }, [])
+
+  //   useEffect(() => {
+  //   fetch("/contact")
+  //     .then((response) => response.json())
+  //     .then((data) => setData(data))
+  //     .catch((error) => console.error(error));
+  // }, []);
 
   const updateUser = (user) => setUser(user)
   if(!user) return (

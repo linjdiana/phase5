@@ -4,6 +4,9 @@ import { useHistory } from 'react-router-dom'
 import { useFormik } from "formik"
 
 function ContactForm() {
+    const history = useHistory()
+
+    const formik = useFormik({})
     return (
         <></>
     )

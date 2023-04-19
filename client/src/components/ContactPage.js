@@ -7,34 +7,34 @@ import {
   Button,
   DialogTitle
 } from "@material-ui/core";
-import Card from "./Card";
+import Card from "./card";
 import styled from 'styled-components';
 import ContactForm from './ContactForm'
 
 const uniqueElementsArray = [
   {
-    type: "Cake",
-    image: require(`https://d33wubrfki0l68.cloudfront.net/8ed37ff261ce617027bee44f999bc049eea1c2c3/03f89/images/uploads/2018_08_15_chocolate_oreo_cookie_ice_cream_cake_2.jpg`)
+    type: "Gnocchi",
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Potato-Gnocchi-in-Bacon-Spinach-Cream-Sauce.jpg"
   },
   {
-    type: "Naan",
-    image: require(`https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/naaaaan.jpeg`)
+    type: "Wonton Soup",
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/wonton%20soup.jpeg"
   },
   {
     type: "BBQ",
-    image: require(`https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/BBQ.jpeg`)
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/BBQ.jpeg"
   },
   {
     type: "Fruit",
-    image: require(`https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg`)
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/fruits.jpeg"
   },
   {
     type: "Shabu Shabu",
-    image: require(`https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Shabu-Shabu-I-2.jpg`)
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Shabu-Shabu-I-2.jpg"
   },
   {
     type: "Dim Sum",
-    image: require(`https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Dim-sum-spread-1200x854.jpg`)
+    image: "https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/Dim-sum-spread-1200x854.jpg"
   }
 ];
 
@@ -101,6 +101,14 @@ function ContactPage() {
       setOpenCards([index]);
     }
   };
+//   const [data, setData] = useState(null);
+
+//   useEffect(() => {
+//     fetch("/contact")
+//       .then((response) => response.json())
+//       .then((data) => setData(data))
+//       .catch((error) => console.error(error));
+//   }, []);
 
   useEffect(() => {
     let timeout = null;
@@ -135,8 +143,7 @@ function ContactPage() {
 
   return (
     <>
-    <Contact>
-    <div className="ContactPage">
+    <div className="contactpage">
       <header>
         <h3>Play the Flip card game</h3>
         <div>
@@ -178,6 +185,11 @@ function ContactPage() {
       <Dialog
         open={showModal}
         disableBackdropClick
+        // onClose={(event, reason) => {
+        //     if (reason !== 'backdropClick') {
+        //         setOpen(false)
+        //     }
+        // }}
         disableEscapeKeyDown
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -198,69 +210,9 @@ function ContactPage() {
         </DialogActions>
       </Dialog>
     </div>
-    </Contact>
     <ContactForm />
     </>
   );
 }
 
 export default ContactPage
-
-const Contact = styled.div `
-position: absolute;
-width:100%;
-height: 100%;
-
-header {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 8px;
-
-  > div {
-    font-size: 15px;
-    width: 324px;
-    text-align: center;
-    margin: 0 auto;
-  }
-}
-
-footer {
-  width: 360px;
-  position: relative;
-  margin: 0 auto;
-  padding: 10px 4px;
-  margin-top: 10px;
-  
-  .score {
-    justify-content: center;
-    display: flex;
-
-    div {
-      padding: 8px
-    }
-  }
-
-  .restart {
-    display: flex;
-    justify-content: center
-  }
-}
-
-.container {
-  border: 1px solid #DEDEDE;
-  padding: 12px;
-  box-shadow: 0 0 4px 4px #DEDEDE; 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
-  align-items: stretch;
-  gap: 1rem;
-  margin: 0 auto;
-  width: 360px;
-  height: 300px;
-  perspective: 100%;
-  max-width: 720px;
-}
-}`
