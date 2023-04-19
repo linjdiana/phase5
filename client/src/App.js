@@ -8,6 +8,7 @@ import ChefsContainer from './components/ChefsContainer'
 import CalendarPage from './components/CalendarPage'
 import ReviewsContainer from './components/ReviewsContainer'
 import RecipesContainer from './components/RecipesContainer'
+import ContactPage from './components/ContactPage'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -83,6 +84,9 @@ function App() {
         </Route>
         <Route path='/recipes'>
           <RecipesContainer recipes={recipes}/>
+        </Route>
+        <Route path='/contact'>
+          <ContactPage />
         </Route>
         <Route path='/recipes_by_chef/<int:id>'>
           <RecipesContainer />
