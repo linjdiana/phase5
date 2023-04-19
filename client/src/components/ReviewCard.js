@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function ReviewCard({ reviewObj }) {
     const { id, user, rating, text } = reviewObj
-    
+
     return (
       <Card>
       <div className="content">
