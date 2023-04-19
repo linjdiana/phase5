@@ -100,14 +100,6 @@ function ContactPage() {
       setOpenCards([index]);
     }
   };
-//   const [data, setData] = useState(null);
-
-//   useEffect(() => {
-//     fetch("/contact")
-//       .then((response) => response.json())
-//       .then((data) => setData(data))
-//       .catch((error) => console.error(error));
-//   }, []);
 
   useEffect(() => {
     let timeout = null;
@@ -203,6 +195,7 @@ function ContactPage() {
           </Button>
         </DialogActions>
       </Dialog>
+      <br /><h1> Email us! </h1>
       <div className="emails">
       
         <a href="mailto:diana@füber.com">diana@füber.com</a><br />
@@ -210,6 +203,7 @@ function ContactPage() {
         <a href="mailto:tony@füber.com">tony@füber.com</a><br />
         <a href="mailto:joon@füber.com">joon@füber.com</a><br />
         <a href="mailto:anika@füber.com">anika@füber.com</a><br />
+        <br />
         </div>
     </div>
     {/* <ContactForm /> */}

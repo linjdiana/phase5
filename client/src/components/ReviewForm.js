@@ -4,15 +4,14 @@ import { useHistory } from 'react-router-dom'
 import { useFormik } from "formik"
 import * as yup from "yup"
 
-function ReviewForm({addReview}) {
+function ReviewForm() {
     const history = useHistory()
-    // const [submittedReview, setSubmittedReview] = useState([])
-    // const addReview = (review) => setSubmittedReview(current => [...current,review])
-  //   const formSchema = yup.object().shape({
-  //   user: yup.string().required("Must enter a name."),
-  //   rating: yup.string(),
-  //   text: yup.string().required("Must enter text."),
-  // })
+     const [submittedReview, setSubmittedReview] = useState([])
+    const addReview = (review) => setSubmittedReview(current => [...current,review])
+    const formSchema = yup.object().shape({
+    user: yup.string().required("Must enter a name."),
+    text: yup.string().required("Must enter text."),
+  })
 
   const formik = useFormik({
     initialValues: {
@@ -21,8 +20,8 @@ function ReviewForm({addReview}) {
       rating:'♡♡♡♡♡',
       text:'',
     },
-    // validationSchema: formSchema,
-    onSubmit: (values, { resetForm }) => {
+    validationSchema: formSchema,
+    onSubmit: (values, { resetForm, setErrors, setTouched }) => {
   
       fetch("/reviews", {
         method: "POST",
@@ -34,11 +33,8 @@ function ReviewForm({addReview}) {
         if(res.ok) {
           res.json().then(review => {
             addReview(review)
-            history.push(`/reviews`)
-            setTimeout(function(){
-              window.location.reload();
-            });
-            resetForm();
+            history.push("/reviews")
+            window.location.reload(); 
           })
         }
       })
@@ -81,7 +77,6 @@ function ReviewForm({addReview}) {
                 <label>What did you think?</label>
                 <textarea type='text' rows='4' cols='36' name='text' value={formik.values.text} onChange={formik.handleChange} />
                 
-
                 <button type="submit" className="submit">
                 Submit
                 </button>
@@ -94,12 +89,11 @@ export default ReviewForm
 
 
 styled.form`
-margin-top: 50px;
 background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
 opacity: 0.7;
 background-repeat: no-repeat;
 background-size: 80%;
-height: 400px;
+height: 500px;
 width: 400px;
 background-color: rgba(255, 255, 255, 0.2);
 display: flex;
@@ -111,5 +105,6 @@ padding: 1.5rem;
 box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.15);
 border-radius: 20px;
 font-size: 24px;
+margin-top: 125px;
 }
 `
