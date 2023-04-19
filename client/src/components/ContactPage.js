@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import Card from "./Card";
 import styled from 'styled-components';
+import ContactForm from './ContactForm'
 
 const uniqueElementsArray = [
   {
@@ -133,6 +134,7 @@ function ContactPage() {
   };
 
   return (
+    <>
     <Contact>
     <div className="ContactPage">
       <header>
@@ -197,6 +199,8 @@ function ContactPage() {
       </Dialog>
     </div>
     </Contact>
+    <ContactForm />
+    </>
   );
 }
 
