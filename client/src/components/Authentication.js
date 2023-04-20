@@ -12,7 +12,7 @@ function Authentication({updateUser}) {
     const handleClick = () => setIsSignup((isSignup) => !isSignup)
     const formSchema = yup.object().shape({
         name: yup.string().required("Please enter a user name"),
-        email: yup.string().email().required("Please enter an email address"),
+        // email: yup.string().email().required("Please enter an email address"),
         password: yup.string().required("Please enter a password"),
       })
     
@@ -54,13 +54,15 @@ function Authentication({updateUser}) {
 
     return (
         <div className="cont">
-          {formik.errors.name && <h2 style={{color:'red'}}> {formik.errors.name}</h2>}
-            {formik.errors.email && <h2 style={{color:'red'}}> {formik.errors.email}</h2>}
-            {formik.errors.password && <h2 style={{color:'red'}}> {formik.errors.password}</h2>}
-          {error&& <h2 style={{color:'red'}}> {error}</h2>}
+            {error&& <h2 style={{color:'red'}}> {error}</h2>}
+            {formik.touched.name && formik.errors.name && <h2 style={{color:'red'}}> {formik.errors.name}</h2>}
+            {formik.touched.password && formik.errors.password && <h2 style={{color:'red'}}> {formik.errors.password}</h2>}
+
+          
         
             {isSignup ? (
               <form className="s--signup" onSubmit={formik.handleSubmit}>
+                 <h2 style={{color:'red'}}>{formik.errors.email}</h2>
                 <h2>Ready to join us?</h2>
                 <label>
                   <span>Name</span>
