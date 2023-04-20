@@ -23,19 +23,32 @@ In order to access the site, you first need to sign up for an account, then log 
 You'll reach the home page which is a brief introduction to the website! 
 <br/><br/>
 Here are the routes: 
-/chefs an introduction to the five chefs <br/>
-/calendar want to make a booking? take a look at our calendar. we don't have a booking functionality yet but feel free to fill out to "contact us" form. If you're indecisive, you can refresh the page and a chef will randomly be generated for you! <br/>
-/recipes a list of some of the most popular recipes our chefs have been using. you can filter based on what you're feeling at the moment. Search filter is by chef name, description, and title.<br/>
-/reviews still don't know if you want to book? take a look at our reviews! if you've already had an experience, feel free to post a review of your own.<br/>
+/chefs<br/> 
+an introduction to the five chefs <br/>
+/calendar <br/> 
+want to make a booking? take a look at our calendar. we don't have a booking functionality yet but feel free to fill out to "contact us" form. If you're indecisive, you can refresh the page and a chef will randomly be generated for you! <br/>
+/recipes<br/> 
+a list of some of the most popular recipes our chefs have been using. you can filter based on what you're feeling at the moment. Search filter is by chef name, description, and title.<br/>
+/reviews <br/> 
+still don't know if you want to book? take a look at our reviews! if you've already had an experience, feel free to post a review of your own.<br/>
 /contactus<br/>
+a little memory game created from images from the seed file, along with the five chefs' individual emails on the bottom. Link is clickable so you can email them directly.
+<br/> <br/> 
+
 
 ## Project Deliverables // models
-/authentication you're able to log in and sign up on the website <br />
-/chefs each of the five chefs has multiple recipes <br/>
-/calendar imported a react-big-calendar to show schedule of availability <br/>
-/recipes each recipe has a chef ID associated with it, so you can search the recipes by chef name.<br/>
-/reviews reviews are associated with user_id and chef_id. From the backend, one can create, review, update(patch) or delete a review.<br/>
+/authentication<br/> 
+you're able to log in and sign up on the website <br />
+/chefs<br/> 
+each of the five chefs has multiple recipes <br/>
+/calendar<br/>  
+imported a react-big-calendar to show schedule of availability <br/>
+/recipes<br/>  
+each recipe has a chef ID associated with it, so you can search the recipes by chef name.<br/>
+/reviews<br/>  
+reviews are associated with user_id and chef_id. From the backend, one can create, review, update(patch) or delete a review.<br/>
 /contactus<br/>
+<br/><br/> 
 
 ## Future goals: 
 - for authentication to include a referral code since the site is only in beta testing mode. This will limit the users to only friends of friends.
