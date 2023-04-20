@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cambay&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     min-height: 50vh;
-    font-family: 'Edu SA Beginner', cursive;
+    font-family: 'Kalam', cursive;
     text-align: center;
     background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     background-size: 130%;
@@ -32,7 +35,7 @@ body {
   }
   
 .navbar p {
-    font-size: 80px;
+    font-size: 88px;
     color: #ccc;
     text-transform: uppercase;
     font-weight: 600;
@@ -57,7 +60,7 @@ body {
   }
   
 .navbar nav {
-    margin: 20px;
+    margin: 16px;
     background: whitesmoke;
     border-radius: 25px;
     padding: 16px;
@@ -102,8 +105,8 @@ body {
   margin: auto;
   border: 1px grey;
   padding: 10px;
-  font-family: 'Cambay', sans-serif;
   font-weight: 200;
+  font-size: 20px;
   }
 
   .home img {
@@ -114,7 +117,6 @@ body {
   }
 
   .reviewform {
-    margin-top: 60px;
     background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     opacity: 0.9;
     background-repeat: no-repeat;
@@ -129,7 +131,7 @@ body {
     padding: 1.15rem;
     box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.18);
     border-radius: 20px;
-    font-size: 28px;
+    font-size: 22px;
     border: 1px solid rgb(218, 181, 206);
   }
 

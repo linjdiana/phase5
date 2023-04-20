@@ -86,25 +86,3 @@ function ReviewForm() {
     )
 }
 export default ReviewForm
-
-
-styled.form`
-background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
-opacity: 0.7;
-background-repeat: no-repeat;
-background-size: 80%;
-height: 500px;
-width: 400px;
-background-color: rgba(255, 255, 255, 0.2);
-display: flex;
-flex-direction: column;
-align-items: center;
-position: sticky;
-top: 0;
-padding: 1.5rem;
-box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.15);
-border-radius: 20px;
-font-size: 24px;
-margin-top: 125px;
-}
-`
