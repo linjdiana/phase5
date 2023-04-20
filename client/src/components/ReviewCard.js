@@ -9,7 +9,7 @@ function ReviewCard({ reviewObj }) {
       <div className="content">
           <ul><strong>{user}</strong></ul>
           <ul>{rating}</ul>
-          <ul>{text}</ul>
+          <ul className="text">{text}</ul>
       </div>
       </Card>
     );
@@ -17,6 +17,7 @@ function ReviewCard({ reviewObj }) {
 
 
 export default ReviewCard
+
 
 const Card = styled.div`
 overflow: hidden;
@@ -26,12 +27,18 @@ width: 20rem;
 height: auto; 
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 background: white;
-opacity: 0.82; 
+opacity: 0.92; 
 display: flex;
 align-items: flex-start;
 justify-content: center;
 flex-direction: column;
 border-radius: 5px;
+color: grey;
+// font-size: 20px;
+.text {
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
+}
 }
 `;
 
