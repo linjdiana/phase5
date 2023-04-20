@@ -36,8 +36,8 @@ border-radius: 5px;
 color: grey;
 // font-size: 20px;
 .text {
-  font-family: 'Indie Flower', cursive;
-  font-size: 18px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 16px;
 }
 }
 `;
