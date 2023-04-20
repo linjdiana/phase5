@@ -43,11 +43,12 @@ const ReviewItems = styled.div`
 `;
 
 const ReviewsForm = styled.div`
+  font-size: 20px;
   width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 350px;
-  margin-top: 50px;
+  height: 500px;
+  margin-top: 25px;
 `;
 

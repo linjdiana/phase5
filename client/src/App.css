@@ -60,7 +60,7 @@ body {
   }
   
 .navbar nav {
-    margin: 20px;
+    margin: 16px;
     background: whitesmoke;
     border-radius: 25px;
     padding: 16px;
@@ -117,7 +117,6 @@ body {
   }
 
   .reviewform {
-    margin-top: 60px;
     background-image: url("https://raw.githubusercontent.com/linjdiana/phase5/main/project%20images/pexels-photo-1131406.webp");
     opacity: 0.9;
     background-repeat: no-repeat;
@@ -132,7 +131,7 @@ body {
     padding: 1.15rem;
     box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.18);
     border-radius: 20px;
-    font-size: 28px;
+    font-size: 22px;
     border: 1px solid rgb(218, 181, 206);
   }
 
