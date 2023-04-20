@@ -10,8 +10,8 @@ class User(db.Model, SerializerMixin):
 
     # serialize_rules = ('-_password_hash')
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    email = db.Column(db.String)
+    name = db.Column(db.String, unique=True)
+    email = db.Column(db.String, unique=True)
     _password_hash = db.Column(db.String)
 
     review = db.relationship('Review', back_populates='users')
@@ -27,6 +27,22 @@ class User(db.Model, SerializerMixin):
     
     def authenticate(self, password):
         return bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
+    
+    @validates('name')
+    def validates_name(self, key, value):
+        names_list = User.query.all()
+        names = [name.name for name in names_list]
+        if value in names:
+            raise ValueError('Name already exists')
+        return
+
+    @validates('email')
+    def validates_email(self, key, value):
+        emails_list = User.query.all()
+        emails = [email.email for email in emails_list]
+        if value in emails:
+            raise ValueError('Email already exists') 
+        return
 
 class Chef(db.Model, SerializerMixin):
     __tablename__ = 'chefs'

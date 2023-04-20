@@ -12,7 +12,7 @@ function Authentication({updateUser}) {
     const handleClick = () => setIsSignup((isSignup) => !isSignup)
     const formSchema = yup.object().shape({
         name: yup.string().required("Please enter a user name"),
-        email: yup.string().email(),
+        email: yup.string().email().required("Please enter an email address"),
         password: yup.string().required("Please enter a password"),
       })
     
@@ -37,7 +37,12 @@ function Authentication({updateUser}) {
                   updateUser(user)
                   history.push('/')
                 })
-              } else {
+              } else if (res.status === 422) {
+                // Back-end validation failed
+                res.json().then(errors => {
+                    formik.setErrors(errors);
+                })
+            } else {
                 //15.2 render the error if the user's authentication fails
                 res.json().then(error => setError(error.message))
               }
@@ -49,7 +54,9 @@ function Authentication({updateUser}) {
 
     return (
         <div className="cont">
-          <h2 style={{color:'red'}}> {formik.errors.name}</h2>
+          {formik.errors.name && <h2 style={{color:'red'}}> {formik.errors.name}</h2>}
+            {formik.errors.email && <h2 style={{color:'red'}}> {formik.errors.email}</h2>}
+            {formik.errors.password && <h2 style={{color:'red'}}> {formik.errors.password}</h2>}
           {error&& <h2 style={{color:'red'}}> {error}</h2>}
         
             {isSignup ? (
